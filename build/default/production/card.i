@@ -24271,12 +24271,11 @@ unsigned int color_read_Blue(void);
 unsigned int color_read_Green(void);
 unsigned int color_read_Clear(void);
 # 6 "./card.h" 2
-# 20 "./card.h"
-unsigned char ReturnFLAG=0;
 
-unsigned int red;
-unsigned int blue;
-unsigned int green;
+
+
+
+
 
 unsigned char readcard(struct RGB_val *colorL);
 void levels(int i,struct RGB_val *colorL);

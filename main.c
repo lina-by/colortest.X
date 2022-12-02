@@ -53,8 +53,8 @@ void main(void){
     //VARIABLES
     char j;
     unsigned char buf;
-    Light(0);
     while (1) {
+    Light(0);
         unsigned char color = readcard(&colorL);
         if(color==0){unsigned char buf[]="white ";}
         if(color==1){unsigned char buf[]="red ";}

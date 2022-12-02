@@ -1,7 +1,6 @@
 #include <xc.h>
 #include "interrupts.h"
 #include "serial.h"
-#include "timers.h"
 
 /************************************
  * Function to turn on interrupts and set if priority is used

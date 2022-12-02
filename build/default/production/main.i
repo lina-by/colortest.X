@@ -24280,12 +24280,11 @@ unsigned int color_read_Blue(void);
 unsigned int color_read_Green(void);
 unsigned int color_read_Clear(void);
 # 6 "./card.h" 2
-# 20 "./card.h"
-unsigned char ReturnFLAG=0;
 
-unsigned int red;
-unsigned int blue;
-unsigned int green;
+
+
+
+
 
 unsigned char readcard(struct RGB_val *colorL);
 void levels(int i,struct RGB_val *colorL);
@@ -24557,8 +24556,8 @@ void main(void){
 
     char j;
     unsigned char buf;
-    Light(0);
     while (1) {
+    Light(0);
         unsigned char color = readcard(&colorL);
         if(color==0){unsigned char buf[]="white ";}
         if(color==1){unsigned char buf[]="red ";}

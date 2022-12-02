@@ -24307,7 +24307,6 @@ void __attribute__((picinterrupt(("high_priority")))) HighISR();
 
 
 
-
 void Interrupts_init(void)
 {
     INTCONbits.PEIE=1;

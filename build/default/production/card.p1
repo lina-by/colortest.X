@@ -3,8 +3,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./color.h: 10: struct RGB_val {
 [s S2015 `ui 1 `ui 1 `ui 1 ]
 [n S2015 RGB_val R G B ]
-"27 ./card.h
-[; ;./card.h: 27: void levels(int i,struct RGB_val *colorL);
+"13 ./card.h
+[; ;./card.h: 13: void levels(int i,struct RGB_val *colorL);
 [v _levels `(v ~T0 @X0 0 ef2`i`*S2015 ]
 "19 ./lights.h
 [; ;./lights.h: 19: void Light(unsigned char colorcode);
@@ -2011,21 +2011,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "40928
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f67k40.h: 40928: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"20 ./card.h
-[; ;./card.h: 20: unsigned char ReturnFLAG=0;
-[v _ReturnFLAG `uc ~T0 @X0 1 e ]
-[i _ReturnFLAG
--> -> 0 `i `uc
-]
-"22
-[; ;./card.h: 22: unsigned int red;
-[v _red `ui ~T0 @X0 1 e ]
-"23
-[; ;./card.h: 23: unsigned int blue;
-[v _blue `ui ~T0 @X0 1 e ]
-"24
-[; ;./card.h: 24: unsigned int green;
-[v _green `ui ~T0 @X0 1 e ]
 "20 card.c
 [; ;card.c: 20: unsigned char readcard(struct RGB_val *colorL){
 [v _readcard `(uc ~T0 @X0 1 ef1`*S2015 ]

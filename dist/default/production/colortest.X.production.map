@@ -6,10 +6,10 @@ Linker command line:
   --edf=C:\Program Files\Microchip\xc8\v2.40\pic\dat\20220703182018_en.msgs \
   -cn -h+dist/default/production\colortest.X.production.sym \
   --cmf=dist/default/production\colortest.X.production.cmf -z -Q18F67K40 \
-  -oC:\Users\linab\AppData\Local\Temp\xcAseac.4 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\linab\AppData\Local\Temp\xcAshhc.4 --defsym=__MPLAB_BUILD=1 \
   --fixupoverflow=error \
   -Mdist/default/production/colortest.X.production.map \
-  --md=C:\Users\linab\AppData\Local\Temp\xcAseac.dat -E1 -ver=XC8 Compiler \
+  --md=C:\Users\linab\AppData\Local\Temp\xcAshhc.dat -E1 -ver=XC8 Compiler \
   --acfsm=1493 -ACODE=00h-01FFFFh -ACONST=00h-01FFFFh \
   -ASMALLCONST=0E00h-0EFFhx498 -AMEDIUMCONST=0E00h-0FFFFh,010E00h-01FFFFh \
   -ACOMRAM=01h-05Fh -AABS1=00h-0DE9h -ABIGRAM=01h-0DE9h \
@@ -29,7 +29,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\linab\AppData\Local\Temp\xcAseac.o \
+  C:\Users\linab\AppData\Local\Temp\xcAshhc.o \
   dist/default/production\colortest.X.production.o 
 
 Object code version is 3.11
@@ -39,7 +39,7 @@ Machine type is 18F67K40
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\linab\AppData\Local\Temp\xcAseac.o
+C:\Users\linab\AppData\Local\Temp\xcAshhc.o
                 idloc                            200000   200000       10        0       5
                 config                           300000   300000        C        0       4
                 init                                 A8       A8        4        4       0
@@ -48,7 +48,7 @@ dist/default/production\colortest.X.production.o
                 intcode                               8        8       A0        4       0
                 idloc                            200000   200000       10        0       5
                 config                           300000   300000        C        0       4
-                temp                                 51       51        1        1       1
+                temp                                 4A       4A        1        1       1
                 text28                              C08      C08       2C      5CE       0
                 text27                              D38      D38       18      5CE       0
                 text26                              C88      C88       2A      5CE       0
@@ -81,7 +81,7 @@ dist/default/production\colortest.X.production.o
                 cstackBANK0                          60       60       44       60       1
                 bssBANK1                            100      100       78      100       1
                 dataBANK0                            A4       A4       3B       60       1
-                bssCOMRAM                            2E       2E       23        1       1
+                bssCOMRAM                            2E       2E       1C        1       1
                 cinit                               ADC      ADC       42        4       0
                 idataBANK0                          B60      B60       3B        4       0
 
@@ -128,9 +128,9 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   MEDIUMCONST    
 
         CLASS   COMRAM         
-                temp                                 51       51        1         1
+                temp                                 4A       4A        1         1
                 cstackCOMRAM                          1        1       2D         1
-                bssCOMRAM                            2E       2E       23         1
+                bssCOMRAM                            2E       2E       1C         1
 
         CLASS   ABS1           
 
@@ -192,7 +192,7 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class
 
                 reset_vec                      000000  000004  000004         0       0  CODE    
-                cstackCOMRAM                   000001  000051  000052         1       1  COMRAM  
+                cstackCOMRAM                   000001  00004A  00004B         1       1  COMRAM  
                 intcode                        000008  000B93  000B9B         4       0  CODE    
                 cstackBANK0                    000060  00007F  0000DF        60       1  BANK0   
                 bssBANK1                       000100  000078  000178       100       1  BANK1   
@@ -216,14 +216,14 @@ UNUSED ADDRESS RANGES
         BANK7            000700-0007FF              100
         BANK8            000800-0008FF              100
         BANK9            000900-0009FF              100
-        BIGRAM           000052-00005F                E
+        BIGRAM           00004B-00005F               15
                          0000DF-0000FF               21
                          000178-000DE9              C72
         BIGSFR           000DEF-000FFF              211
         CODE             000004-000007                4
                          000B9B-000B9B                1
                          000D98-01FFFF            1F268
-        COMRAM           000052-00005F                E
+        COMRAM           00004B-00005F               15
         CONST            000004-000007                4
                          000B9B-000B9B                1
                          000D98-01FFFF            1F268
@@ -278,9 +278,8 @@ _RC4STAbits                    (abs)        000EE7
 _RD5PPS                        (abs)        000E6F
 _RD6PPS                        (abs)        000E70
 _RX4PPS                        (abs)        000E15
-_ReturnFLAG                    bssCOMRAM    000050
-_RxBufReadCnt                  bssCOMRAM    00004C
-_RxBufWriteCnt                 bssCOMRAM    00004D
+_RxBufReadCnt                  bssCOMRAM    000046
+_RxBufWriteCnt                 bssCOMRAM    000047
 _SP4BRGH                       (abs)        000EE6
 _SP4BRGL                       (abs)        000EE5
 _SSP2ADD                       (abs)        000ED6
@@ -302,11 +301,11 @@ _TRISGbits                     (abs)        000F87
 _TX4REG                        (abs)        000EE4
 _TX4STAbits                    (abs)        000EE8
 _Timer0_init                   text22       000CFA
-_TxBufReadCnt                  bssCOMRAM    00004A
-_TxBufWriteCnt                 bssCOMRAM    00004B
+_TxBufReadCnt                  bssCOMRAM    000044
+_TxBufWriteCnt                 bssCOMRAM    000045
 _TxBufferedString              text20       000B9C
-_VxBufReadCnt                  bssCOMRAM    000048
-_VxBufWriteCnt                 bssCOMRAM    000049
+_VxBufReadCnt                  bssCOMRAM    000042
+_VxBufWriteCnt                 bssCOMRAM    000043
 __HRAM                         (abs)        000000
 __Habs1                        abs1         000000
 __Hbank0                       bank0        000000
@@ -377,7 +376,7 @@ __Hspace_2                     (abs)        000000
 __Hspace_4                     (abs)        60000C
 __Hstack                       stack        000000
 __Hstruct                      struct       000000
-__Htemp                        temp         000052
+__Htemp                        temp         00004B
 __Htext                        text         000000
 __Htext0                       text0        000000
 __Htext1                       text1        000000
@@ -477,7 +476,7 @@ __Lspace_2                     (abs)        000000
 __Lspace_4                     (abs)        000000
 __Lstack                       stack        000000
 __Lstruct                      struct       000000
-__Ltemp                        temp         000051
+__Ltemp                        temp         00004A
 __Ltext                        text         000000
 __Ltext0                       text0        000000
 __Ltext1                       text1        000000
@@ -603,15 +602,13 @@ __ptext8                       text8        00098C
 __ptext9                       text9        000456
 __ramtop                       ramtop       000E00
 __smallconst                   smallconst   000000
-_blue                          bssCOMRAM    000044
-_charFLAG                      bssCOMRAM    00004F
+_charFLAG                      bssCOMRAM    000049
 _color_click_init              text13       000BD4
 _color_read_Blue               text5        000A8C
 _color_read_Green              text4        000A3C
 _color_read_Red                text3        0009EC
 _color_writetoaddr             text14       000CDA
 _getCharFromTxBuf              text28       000C08
-_green                         bssCOMRAM    000042
 _initUSART4                    text12       000D1A
 _isDataInTxBuf                 text27       000D38
 _levels                        text2        0008A0
@@ -619,16 +616,15 @@ _main                          text0        00060A
 _putCharToRxBuf                text26       000C88
 _putCharToTxBuf                text21       000C5E
 _readcard                      text1        0000AC
-_red                           bssCOMRAM    000046
-_sendFLAG                      bssCOMRAM    00004E
-btemp                          temp         000051
+_sendFLAG                      bssCOMRAM    000048
+btemp                          temp         00004A
 color_read_Blue@tmp            cstackCOMRAM 000010
 color_read_Green@tmp           cstackCOMRAM 000010
 color_read_Red@tmp             cstackCOMRAM 000010
 color_writetoaddr@address      cstackCOMRAM 00000A
 color_writetoaddr@value        cstackCOMRAM 000009
 end_of_initialization          cinit        000B14
-int$flags                      temp         000051
+int$flags                      temp         00004A
 intlevel0                      text         000000
 intlevel1                      text         000000
 intlevel2                      text         000000
@@ -637,23 +633,23 @@ isa$std                        (abs)        000001
 isa$xinst                      (abs)        000000
 levels@colorL                  cstackCOMRAM 000014
 levels@i                       cstackCOMRAM 000012
-main@F14599                    dataBANK0    0000C7
-main@F14601                    dataBANK0    0000DA
-main@F14603                    dataBANK0    0000D4
-main@F14605                    dataBANK0    0000C0
-main@F14607                    dataBANK0    0000CE
-main@F14609                    dataBANK0    0000B8
-main@F14611                    dataBANK0    0000B0
-main@F14613                    dataBANK0    0000A4
+main@F14595                    dataBANK0    0000C7
+main@F14597                    dataBANK0    0000DA
+main@F14599                    dataBANK0    0000D4
+main@F14601                    dataBANK0    0000C0
+main@F14603                    dataBANK0    0000CE
+main@F14605                    dataBANK0    0000B8
+main@F14607                    dataBANK0    0000B0
+main@F14609                    dataBANK0    0000A4
 main@buf                       cstackBANK0  00009B
-main@buf_101                   cstackBANK0  00008A
-main@buf_103                   cstackBANK0  000083
-main@buf_105                   cstackBANK0  000090
-main@buf_107                   cstackBANK0  00006C
-main@buf_109                   cstackBANK0  000074
-main@buf_111                   cstackBANK0  000060
-main@buf_97                    cstackBANK0  00007C
-main@buf_99                    cstackBANK0  000096
+main@buf_101                   cstackBANK0  000090
+main@buf_103                   cstackBANK0  00006C
+main@buf_105                   cstackBANK0  000074
+main@buf_107                   cstackBANK0  000060
+main@buf_93                    cstackBANK0  00007C
+main@buf_95                    cstackBANK0  000096
+main@buf_97                    cstackBANK0  00008A
+main@buf_99                    cstackBANK0  000083
 main@color                     cstackBANK0  0000A3
 main@colorL                    cstackBANK0  00009D
 main@j                         cstackBANK0  00009C
@@ -667,10 +663,10 @@ stackhi                        (abs)        000000
 stacklo                        (abs)        000000
 start                          init         0000A8
 start_initialization           cinit        000ADC
-ttemp5                         temp         000052
-ttemp6                         temp         000055
-ttemp7                         temp         000059
-wtemp8                         temp         000052
+ttemp5                         temp         00004B
+ttemp6                         temp         00004E
+ttemp7                         temp         000052
+wtemp8                         temp         00004B
 
 
 MODULE INFORMATION
