@@ -5,5 +5,4 @@ lights.h  \
 color.h  \
 i2c.h  \
 serial.h  \
-interrupts.h  \
-timers.h 
+interrupts.h 

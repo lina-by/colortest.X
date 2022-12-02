@@ -2073,8 +2073,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ]
 "18
-[; ;./serial.h: 18: volatile char EUSART4TXbuf[60];
-[v _EUSART4TXbuf `Vuc ~T0 @X0 -> 60 `i e ]
+[; ;./serial.h: 18: volatile char EUSART4TXbuf[100];
+[v _EUSART4TXbuf `Vuc ~T0 @X0 -> 100 `i e ]
 "19
 [; ;./serial.h: 19: volatile char TxBufWriteCnt=0;
 [v _TxBufWriteCnt `Vuc ~T0 @X0 1 e ]
@@ -2102,11 +2102,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _VxBufReadCnt
 -> -> 0 `i `uc
 ]
-"10 ./interrupts.h
-[; ;./interrupts.h: 10: char charFLAG;
+"9 ./interrupts.h
+[; ;./interrupts.h: 9: char charFLAG;
 [v _charFLAG `uc ~T0 @X0 1 e ]
-"11
-[; ;./interrupts.h: 11: char sendFLAG;
+"10
+[; ;./interrupts.h: 10: char sendFLAG;
 [v _sendFLAG `uc ~T0 @X0 1 e ]
 "9 interrupts.c
 [; ;interrupts.c: 9: void Interrupts_init(void)

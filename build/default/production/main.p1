@@ -4,14 +4,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./color.h: 10: struct RGB_val {
 [s S2015 `ui 1 `ui 1 `ui 1 ]
 [n S2015 RGB_val R G B ]
-"8 ./timers.h
-[; ;./timers.h: 8: void Timer0_init(void);
-[v _Timer0_init `(v ~T0 @X0 0 ef ]
 "27 ./serial.h
 [; ;./serial.h: 27: void initUSART4(void);
 [v _initUSART4 `(v ~T0 @X0 0 ef ]
-"12 ./interrupts.h
-[; ;./interrupts.h: 12: void Interrupts_init(void);
+"11 ./interrupts.h
+[; ;./interrupts.h: 11: void Interrupts_init(void);
 [v _Interrupts_init `(v ~T0 @X0 0 ef ]
 "19 ./color.h
 [; ;./color.h: 19: void color_click_init(void);
@@ -2014,11 +2011,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "40928
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f67k40.h: 40928: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"10 ./interrupts.h
-[; ;./interrupts.h: 10: char charFLAG;
+"9 ./interrupts.h
+[; ;./interrupts.h: 9: char charFLAG;
 [v _charFLAG `uc ~T0 @X0 1 e ]
-"11
-[; ;./interrupts.h: 11: char sendFLAG;
+"10
+[; ;./interrupts.h: 10: char sendFLAG;
 [v _sendFLAG `uc ~T0 @X0 1 e ]
 "14 ./serial.h
 [; ;./serial.h: 14: volatile char EUSART4RXbuf[20];
@@ -2036,8 +2033,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ]
 "18
-[; ;./serial.h: 18: volatile char EUSART4TXbuf[60];
-[v _EUSART4TXbuf `Vuc ~T0 @X0 -> 60 `i e ]
+[; ;./serial.h: 18: volatile char EUSART4TXbuf[100];
+[v _EUSART4TXbuf `Vuc ~T0 @X0 -> 100 `i e ]
 "19
 [; ;./serial.h: 19: volatile char TxBufWriteCnt=0;
 [v _TxBufWriteCnt `Vuc ~T0 @X0 1 e ]
@@ -2066,53 +2063,50 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"45 main.c
-[; ;main.c: 45: void main(void){
+"44 main.c
+[; ;main.c: 44: void main(void){
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"46
-[; ;main.c: 46:     struct RGB_val colorL;
+"45
+[; ;main.c: 45:     struct RGB_val colorL;
 [v _colorL `S2015 ~T0 @X0 1 a ]
-"48
-[; ;main.c: 48:     Timer0_init();
-[e ( _Timer0_init ..  ]
-"49
-[; ;main.c: 49:     initUSART4();
+"47
+[; ;main.c: 47:     initUSART4();
 [e ( _initUSART4 ..  ]
-"50
-[; ;main.c: 50:     Interrupts_init();
+"48
+[; ;main.c: 48:     Interrupts_init();
 [e ( _Interrupts_init ..  ]
-"51
-[; ;main.c: 51:     color_click_init();
+"49
+[; ;main.c: 49:     color_click_init();
 [e ( _color_click_init ..  ]
-"52
-[; ;main.c: 52:     LightInit();
+"50
+[; ;main.c: 50:     LightInit();
 [e ( _LightInit ..  ]
-"54
-[; ;main.c: 54:     char j;
+"52
+[; ;main.c: 52:     char j;
 [v _j `uc ~T0 @X0 1 a ]
-"55
-[; ;main.c: 55:     unsigned char buf;
-[v _buf `uc ~T0 @X0 1 a ]
-"56
-[; ;main.c: 56:     while (1) {
+"53
+[; ;main.c: 53:     unsigned char buf[15];
+[v _buf `uc ~T0 @X0 -> 15 `i a ]
+"54
+[; ;main.c: 54:     while (1) {
 [e :U 2020 ]
 {
-"57
-[; ;main.c: 57:     Light(0);
+"55
+[; ;main.c: 55:     Light(0);
 [e ( _Light (1 -> -> 0 `i `uc ]
-"58
-[; ;main.c: 58:         unsigned char color = readcard(&colorL);
+"56
+[; ;main.c: 56:         unsigned char color = readcard(&colorL);
 [v _color `uc ~T0 @X0 1 a ]
 [e = _color ( _readcard (1 &U _colorL ]
-"59
-[; ;main.c: 59:         if(color==0){unsigned char buf[]="white ";}
+"57
+[; ;main.c: 57:         if(color==0){unsigned char buf[]="white ";}
 [e $ ! == -> _color `i -> 0 `i 2022  ]
 {
-[v F14595 `uc ~T0 @X0 -> 7 `i s ]
-[i F14595
+[v F14593 `uc ~T0 @X0 -> 7 `i s ]
+[i F14593
 :U ..
 -> 119 `c
 -> 104 `c
@@ -2124,15 +2118,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _buf `uc ~T0 @X0 -> 7 `i a ]
-[e = _buf F14595 ]
+[e = _buf F14593 ]
 }
 [e :U 2022 ]
-"60
-[; ;main.c: 60:         if(color==1){unsigned char buf[]="red ";}
+"58
+[; ;main.c: 58:         if(color==1){unsigned char buf[]="red ";}
 [e $ ! == -> _color `i -> 1 `i 2023  ]
 {
-[v F14597 `uc ~T0 @X0 -> 5 `i s ]
-[i F14597
+[v F14595 `uc ~T0 @X0 -> 5 `i s ]
+[i F14595
 :U ..
 -> 114 `c
 -> 101 `c
@@ -2142,15 +2136,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _buf `uc ~T0 @X0 -> 5 `i a ]
-[e = _buf F14597 ]
+[e = _buf F14595 ]
 }
 [e :U 2023 ]
-"61
-[; ;main.c: 61:         if(color==2){unsigned char buf[]="blue ";}
+"59
+[; ;main.c: 59:         if(color==2){unsigned char buf[]="blue ";}
 [e $ ! == -> _color `i -> 2 `i 2024  ]
 {
-[v F14599 `uc ~T0 @X0 -> 6 `i s ]
-[i F14599
+[v F14597 `uc ~T0 @X0 -> 6 `i s ]
+[i F14597
 :U ..
 -> 98 `c
 -> 108 `c
@@ -2161,15 +2155,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _buf `uc ~T0 @X0 -> 6 `i a ]
-[e = _buf F14599 ]
+[e = _buf F14597 ]
 }
 [e :U 2024 ]
-"62
-[; ;main.c: 62:         if(color==3){unsigned char buf[]="green ";}
+"60
+[; ;main.c: 60:         if(color==3){unsigned char buf[]="green ";}
 [e $ ! == -> _color `i -> 3 `i 2025  ]
 {
-[v F14601 `uc ~T0 @X0 -> 7 `i s ]
-[i F14601
+[v F14599 `uc ~T0 @X0 -> 7 `i s ]
+[i F14599
 :U ..
 -> 103 `c
 -> 114 `c
@@ -2181,15 +2175,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _buf `uc ~T0 @X0 -> 7 `i a ]
-[e = _buf F14601 ]
+[e = _buf F14599 ]
 }
 [e :U 2025 ]
-"63
-[; ;main.c: 63:         if(color==4){unsigned char buf[]="pink ";}
+"61
+[; ;main.c: 61:         if(color==4){unsigned char buf[]="pink ";}
 [e $ ! == -> _color `i -> 4 `i 2026  ]
 {
-[v F14603 `uc ~T0 @X0 -> 6 `i s ]
-[i F14603
+[v F14601 `uc ~T0 @X0 -> 6 `i s ]
+[i F14601
 :U ..
 -> 112 `c
 -> 105 `c
@@ -2200,15 +2194,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _buf `uc ~T0 @X0 -> 6 `i a ]
-[e = _buf F14603 ]
+[e = _buf F14601 ]
 }
 [e :U 2026 ]
-"64
-[; ;main.c: 64:         if(color==5){unsigned char buf[]="yellow ";}
+"62
+[; ;main.c: 62:         if(color==5){unsigned char buf[]="yellow ";}
 [e $ ! == -> _color `i -> 5 `i 2027  ]
 {
-[v F14605 `uc ~T0 @X0 -> 8 `i s ]
-[i F14605
+[v F14603 `uc ~T0 @X0 -> 8 `i s ]
+[i F14603
 :U ..
 -> 121 `c
 -> 101 `c
@@ -2221,15 +2215,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _buf `uc ~T0 @X0 -> 8 `i a ]
-[e = _buf F14605 ]
+[e = _buf F14603 ]
 }
 [e :U 2027 ]
-"65
-[; ;main.c: 65:         if(color==6){unsigned char buf[]="orange ";}
+"63
+[; ;main.c: 63:         if(color==6){unsigned char buf[]="orange ";}
 [e $ ! == -> _color `i -> 6 `i 2028  ]
 {
-[v F14607 `uc ~T0 @X0 -> 8 `i s ]
-[i F14607
+[v F14605 `uc ~T0 @X0 -> 8 `i s ]
+[i F14605
 :U ..
 -> 111 `c
 -> 114 `c
@@ -2242,15 +2236,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _buf `uc ~T0 @X0 -> 8 `i a ]
-[e = _buf F14607 ]
+[e = _buf F14605 ]
 }
 [e :U 2028 ]
-"66
-[; ;main.c: 66:         if(color==7){unsigned char buf[]="light blue ";}
+"64
+[; ;main.c: 64:         if(color==7){unsigned char buf[]="light blue ";}
 [e $ ! == -> _color `i -> 7 `i 2029  ]
 {
-[v F14609 `uc ~T0 @X0 -> 12 `i s ]
-[i F14609
+[v F14607 `uc ~T0 @X0 -> 12 `i s ]
+[i F14607
 :U ..
 -> 108 `c
 -> 105 `c
@@ -2267,17 +2261,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _buf `uc ~T0 @X0 -> 12 `i a ]
-[e = _buf F14609 ]
+[e = _buf F14607 ]
 }
 [e :U 2029 ]
-"67
-[; ;main.c: 67:         TxBufferedString(&buf);
+"65
+[; ;main.c: 65:         TxBufferedString(&buf);
 [e ( _TxBufferedString (1 -> &U _buf `*uc ]
-"68
-[; ;main.c: 68:         Light(0);
+"66
+[; ;main.c: 66:         Light(0);
 [e ( _Light (1 -> -> 0 `i `uc ]
-"69
-[; ;main.c: 69:         for (j=0;j<3;j++){_delay((unsigned long)((900)*(64000000/4000.0)));}
+"67
+[; ;main.c: 67:         for (j=0;j<3;j++){_delay((unsigned long)((900)*(64000000/4000.0)));}
 {
 [e = _j -> -> 0 `i `uc ]
 [e $ < -> _j `i -> 3 `i 2030  ]
@@ -2290,13 +2284,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ < -> _j `i -> 3 `i 2030  ]
 [e :U 2031 ]
 }
-"70
-[; ;main.c: 70:     }
+"68
+[; ;main.c: 68:     }
 }
 [e :U 2019 ]
 [e $U 2020  ]
 [e :U 2021 ]
-"71
-[; ;main.c: 71: }
+"69
+[; ;main.c: 69: }
 [e :UE 2018 ]
 }

@@ -13,7 +13,6 @@
 #include "i2c.h"
 #include "serial.h"
 #include "interrupts.h"
-#include "timers.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -45,14 +44,13 @@
 void main(void){   
     struct RGB_val colorL;
     //INITIALIZATION
-    Timer0_init();
     initUSART4();
     Interrupts_init();
     color_click_init();
     LightInit();
     //VARIABLES
     char j;
-    unsigned char buf;
+    unsigned char buf[15];
     while (1) {
     Light(0);
         unsigned char color = readcard(&colorL);

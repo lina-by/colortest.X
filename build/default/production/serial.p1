@@ -2046,11 +2046,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "40928
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f67k40.h: 40928: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"10 ./interrupts.h
-[; ;./interrupts.h: 10: char charFLAG;
+"9 ./interrupts.h
+[; ;./interrupts.h: 9: char charFLAG;
 [v _charFLAG `uc ~T0 @X0 1 e ]
-"11
-[; ;./interrupts.h: 11: char sendFLAG;
+"10
+[; ;./interrupts.h: 10: char sendFLAG;
 [v _sendFLAG `uc ~T0 @X0 1 e ]
 "14 ./serial.h
 [; ;./serial.h: 14: volatile char EUSART4RXbuf[20];
@@ -2068,8 +2068,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ]
 "18
-[; ;./serial.h: 18: volatile char EUSART4TXbuf[60];
-[v _EUSART4TXbuf `Vuc ~T0 @X0 -> 60 `i e ]
+[; ;./serial.h: 18: volatile char EUSART4TXbuf[100];
+[v _EUSART4TXbuf `Vuc ~T0 @X0 -> 100 `i e ]
 "19
 [; ;./serial.h: 19: volatile char TxBufWriteCnt=0;
 [v _TxBufWriteCnt `Vuc ~T0 @X0 1 e ]
@@ -2266,8 +2266,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _getCharFromTxBuf ]
 [f ]
 "66
-[; ;serial.c: 66:     if (TxBufReadCnt>=60) {TxBufReadCnt=0;}
-[e $ ! >= -> _TxBufReadCnt `i -> 60 `i 2034  ]
+[; ;serial.c: 66:     if (TxBufReadCnt>=100) {TxBufReadCnt=0;}
+[e $ ! >= -> _TxBufReadCnt `i -> 100 `i 2034  ]
 {
 [e = _TxBufReadCnt -> -> 0 `i `uc ]
 }
@@ -2288,8 +2288,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _byte `uc ~T0 @X0 1 r1 ]
 [f ]
 "72
-[; ;serial.c: 72:     if (TxBufWriteCnt>=60) {TxBufWriteCnt=0;}
-[e $ ! >= -> _TxBufWriteCnt `i -> 60 `i 2036  ]
+[; ;serial.c: 72:     if (TxBufWriteCnt>=100) {TxBufWriteCnt=0;}
+[e $ ! >= -> _TxBufWriteCnt `i -> 100 `i 2036  ]
 {
 [e = _TxBufWriteCnt -> -> 0 `i `uc ]
 }

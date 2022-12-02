@@ -24337,20 +24337,8 @@ unsigned char I2C_2_Master_Read(unsigned char ack);
 
 
 
-# 1 "./timers.h" 1
-
-
-
-
-
-
-
-void Timer0_init(void);
-unsigned int get16bitTMR0val(void);
-# 5 "./interrupts.h" 2
-
 # 1 "./serial.h" 1
-# 6 "./interrupts.h" 2
+# 5 "./interrupts.h" 2
 
 
 
@@ -24365,7 +24353,7 @@ volatile char EUSART4RXbuf[20];
 volatile char RxBufWriteCnt=0;
 volatile char RxBufReadCnt=0;
 
-volatile char EUSART4TXbuf[60];
+volatile char EUSART4TXbuf[100];
 volatile char TxBufWriteCnt=0;
 volatile char TxBufReadCnt=0;
 
@@ -24396,7 +24384,6 @@ char getCharFromVxBuf(void);
 void putCharToVxBuf(char byte);
 char isDataInVxBuf (void);
 # 14 "main.c" 2
-
 
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\stdio.h" 1 3
@@ -24543,19 +24530,18 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 17 "main.c" 2
-# 45 "main.c"
+# 16 "main.c" 2
+# 44 "main.c"
 void main(void){
     struct RGB_val colorL;
 
-    Timer0_init();
     initUSART4();
     Interrupts_init();
     color_click_init();
     LightInit();
 
     char j;
-    unsigned char buf;
+    unsigned char buf[15];
     while (1) {
     Light(0);
         unsigned char color = readcard(&colorL);

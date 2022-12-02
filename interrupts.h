@@ -2,7 +2,6 @@
 #define _interrupts_H
 
 #include <xc.h>
-#include "timers.h"
 #include "serial.h"
 
 

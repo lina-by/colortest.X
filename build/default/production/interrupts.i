@@ -24236,18 +24236,6 @@ unsigned char __t3rd16on(void);
 
 
 
-# 1 "./timers.h" 1
-
-
-
-
-
-
-
-void Timer0_init(void);
-unsigned int get16bitTMR0val(void);
-# 5 "./interrupts.h" 2
-
 # 1 "./serial.h" 1
 
 
@@ -24260,7 +24248,7 @@ volatile char EUSART4RXbuf[20];
 volatile char RxBufWriteCnt=0;
 volatile char RxBufReadCnt=0;
 
-volatile char EUSART4TXbuf[60];
+volatile char EUSART4TXbuf[100];
 volatile char TxBufWriteCnt=0;
 volatile char TxBufReadCnt=0;
 
@@ -24290,7 +24278,7 @@ void sendTxBuf(void);
 char getCharFromVxBuf(void);
 void putCharToVxBuf(char byte);
 char isDataInVxBuf (void);
-# 6 "./interrupts.h" 2
+# 5 "./interrupts.h" 2
 
 
 
