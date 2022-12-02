@@ -56,11 +56,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "15821
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f67k40.h: 15821: extern volatile unsigned char TX4REG __attribute__((address(0xEE4)));
 [v _TX4REG `Vuc ~T0 @X0 0 e@3812 ]
-"37 ./serial.h
-[; ;./serial.h: 37: char getCharFromTxBuf(void);
+"38 ./serial.h
+[; ;./serial.h: 38: char getCharFromTxBuf(void);
 [v _getCharFromTxBuf `(uc ~T0 @X0 0 ef ]
-"39
-[; ;./serial.h: 39: char isDataInTxBuf (void);
+"40
+[; ;./serial.h: 40: char isDataInTxBuf (void);
 [v _isDataInTxBuf `(uc ~T0 @X0 0 ef ]
 "28811 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f67k40.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f67k40.h: 28811:     struct {
@@ -80,8 +80,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "15783
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f67k40.h: 15783: extern volatile unsigned char RC4REG __attribute__((address(0xEE3)));
 [v _RC4REG `Vuc ~T0 @X0 0 e@3811 ]
-"33 ./serial.h
-[; ;./serial.h: 33: void putCharToRxBuf(char byte);
+"34 ./serial.h
+[; ;./serial.h: 34: void putCharToRxBuf(char byte);
 [v _putCharToRxBuf `(v ~T0 @X0 0 ef1`uc ]
 "55 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f67k40.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f67k40.h: 55: __asm("PPSLOCK equ 0DEFh");
@@ -2057,47 +2057,47 @@ Version 4.0 HI-TECH Software Intermediate Code
 "40928
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f67k40.h: 40928: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"13 ./serial.h
-[; ;./serial.h: 13: volatile char EUSART4RXbuf[20];
+"14 ./serial.h
+[; ;./serial.h: 14: volatile char EUSART4RXbuf[20];
 [v _EUSART4RXbuf `Vuc ~T0 @X0 -> 20 `i e ]
-"14
-[; ;./serial.h: 14: volatile char RxBufWriteCnt=0;
+"15
+[; ;./serial.h: 15: volatile char RxBufWriteCnt=0;
 [v _RxBufWriteCnt `Vuc ~T0 @X0 1 e ]
 [i _RxBufWriteCnt
 -> -> 0 `i `uc
 ]
-"15
-[; ;./serial.h: 15: volatile char RxBufReadCnt=0;
+"16
+[; ;./serial.h: 16: volatile char RxBufReadCnt=0;
 [v _RxBufReadCnt `Vuc ~T0 @X0 1 e ]
 [i _RxBufReadCnt
 -> -> 0 `i `uc
 ]
-"17
-[; ;./serial.h: 17: volatile char EUSART4TXbuf[60];
-[v _EUSART4TXbuf `Vuc ~T0 @X0 -> 60 `i e ]
 "18
-[; ;./serial.h: 18: volatile char TxBufWriteCnt=0;
+[; ;./serial.h: 18: volatile char EUSART4TXbuf[60];
+[v _EUSART4TXbuf `Vuc ~T0 @X0 -> 60 `i e ]
+"19
+[; ;./serial.h: 19: volatile char TxBufWriteCnt=0;
 [v _TxBufWriteCnt `Vuc ~T0 @X0 1 e ]
 [i _TxBufWriteCnt
 -> -> 0 `i `uc
 ]
-"19
-[; ;./serial.h: 19: volatile char TxBufReadCnt=0;
+"20
+[; ;./serial.h: 20: volatile char TxBufReadCnt=0;
 [v _TxBufReadCnt `Vuc ~T0 @X0 1 e ]
 [i _TxBufReadCnt
 -> -> 0 `i `uc
 ]
-"21
-[; ;./serial.h: 21: volatile char EUSART4VXbuf[60];
-[v _EUSART4VXbuf `Vuc ~T0 @X0 -> 60 `i e ]
 "22
-[; ;./serial.h: 22: volatile char VxBufWriteCnt=0;
+[; ;./serial.h: 22: volatile char EUSART4VXbuf[60];
+[v _EUSART4VXbuf `Vuc ~T0 @X0 -> 60 `i e ]
+"23
+[; ;./serial.h: 23: volatile char VxBufWriteCnt=0;
 [v _VxBufWriteCnt `Vuc ~T0 @X0 1 e ]
 [i _VxBufWriteCnt
 -> -> 0 `i `uc
 ]
-"23
-[; ;./serial.h: 23: volatile char VxBufReadCnt=0;
+"24
+[; ;./serial.h: 24: volatile char VxBufReadCnt=0;
 [v _VxBufReadCnt `Vuc ~T0 @X0 1 e ]
 [i _VxBufReadCnt
 -> -> 0 `i `uc

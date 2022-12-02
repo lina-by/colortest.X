@@ -24249,7 +24249,13 @@ unsigned int get16bitTMR0val(void);
 # 5 "./interrupts.h" 2
 
 # 1 "./serial.h" 1
-# 13 "./serial.h"
+
+
+
+
+# 1 "./interrupts.h" 1
+# 5 "./serial.h" 2
+# 14 "./serial.h"
 volatile char EUSART4RXbuf[20];
 volatile char RxBufWriteCnt=0;
 volatile char RxBufReadCnt=0;

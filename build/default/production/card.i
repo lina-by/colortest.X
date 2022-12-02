@@ -24244,11 +24244,10 @@ void Light(unsigned char colorcode);
 
 # 1 "./color.h" 1
 # 10 "./color.h"
-struct RGBC_val {
+struct RGB_val {
  unsigned int R;
  unsigned int G;
  unsigned int B;
-    unsigned int C;
 };
 
 
@@ -24279,8 +24278,8 @@ unsigned int red;
 unsigned int blue;
 unsigned int green;
 
-unsigned char readcard(void);
-void levels(int i);
+unsigned char readcard(struct RGB_val *colorL);
+void levels(int i,struct RGB_val *colorL);
 # 2 "card.c" 2
 
 
@@ -24320,51 +24319,44 @@ void I2C_2_Master_Write(unsigned char data_byte);
 unsigned char I2C_2_Master_Read(unsigned char ack);
 # 5 "card.c" 2
 # 20 "card.c"
-unsigned char readcard(void){
-    levels(0);
-    unsigned char white=0;
-    unsigned char red=1;
-    unsigned char blue=2;
-    unsigned char green=3;
-    unsigned char pink=4;
-    unsigned char yellow=5;
-    unsigned char orange=6;
-    unsigned char lightblue=7;
+unsigned char readcard(struct RGB_val *colorL){
+    levels(0,colorL);
 
-    unsigned int ratio1=100*red/blue;
-    unsigned int ratio2=100*red/green;
-    unsigned int ratio3=100*blue/green;
+    float ratio1=colorL->R/colorL->B;
+    float ratio2=colorL->R/colorL->G;
+    float ratio3=colorL->B/colorL->G;
 
 
-    if ((ratio1>80 & ratio1<125) & (ratio2>80 & ratio2<125) & (ratio3>80 & ratio3<125)){
-        if(blue>4000){return lightblue;}
-        return blue;
+    if ((ratio1>0.7 & ratio1<1.4) & (ratio2>0.7 & ratio2<1.4) & (ratio3>0.7 & ratio3<1.4)){
+        if(colorL->B>4000){return 7;}
+        return 2;
     }
 
-    if (ratio1>160 & ratio2>160){
+    if (ratio1>1.6 & ratio2>1.6){
 
-        levels(2);
-        if(blue>1000){return pink;}
+        levels(2,colorL);
+        if(colorL->B>1000){return 4;}
 
-        levels(3);
-        if(green>5500){return yellow;}
+        levels(3,colorL);
+        if(colorL->G>5500){return 5;}
 
-        levels(3);
-        if(green>2000){return orange;}
+        levels(3,colorL);
+        if(colorL->G>2000){return 6;}
 
 
-        return red;
+        return 1;
     }
 
-    levels(1);
-    if(red>1000){return white;}
-    return green;
+    levels(1,colorL);
+    if(colorL->R>1000){return 0;}
+    return 3;
 }
 
-void levels(int i){
+void levels(int i,struct RGB_val *colorL){
         Light(i);
         _delay((unsigned long)((900)*(64000000/4000.0)));
-        red = color_read_Red();
-        blue = color_read_Blue();
-        green = color_read_Green();
+        if (i==1){LATFbits.LATF7=1;}
+        colorL->R = color_read_Red();
+        colorL->B = color_read_Blue();
+        colorL->G = color_read_Green();
 }

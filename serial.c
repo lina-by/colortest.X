@@ -1,5 +1,6 @@
 #include <xc.h>
 #include "serial.h"
+#include "interrupts.h"
 
 void initUSART4(void) {
     RC0PPS = 0x12; // Map EUSART4 TX to RC0
@@ -85,6 +86,8 @@ void TxBufferedString(char *string){
     while(*string != 0){  // While the data pointed to isn?t a 0x00 do below (strings in C must end with a NULL byte) 
 		putCharToTxBuf(*string++); 
     }
+    sendFLAG=1;
+    PIE4bits.TX4IE=1;
 }
 
 //initialise interrupt driven transmission of the Tx buf

@@ -19,7 +19,7 @@ void Light(unsigned char colorcode){
     }
     if (colorcode==1){ //Red light
         LATGbits.LATG1=1; //Red light
-        LATFbits.LATF7=1; //Blue light
+        LATFbits.LATF7=0; //Blue light
         LATAbits.LATA4=0; //Green ligt
     }
     if (colorcode==2){ //Blue light
@@ -32,4 +32,5 @@ void Light(unsigned char colorcode){
         LATFbits.LATF7=0; //Blue light
         LATAbits.LATA4=1; //Green ligt
     }
+   
 }

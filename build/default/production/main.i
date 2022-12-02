@@ -24253,11 +24253,10 @@ void Light(unsigned char colorcode);
 
 # 1 "./color.h" 1
 # 10 "./color.h"
-struct RGBC_val {
+struct RGB_val {
  unsigned int R;
  unsigned int G;
  unsigned int B;
-    unsigned int C;
 };
 
 
@@ -24288,8 +24287,8 @@ unsigned int red;
 unsigned int blue;
 unsigned int green;
 
-unsigned char readcard(void);
-void levels(int i);
+unsigned char readcard(struct RGB_val *colorL);
+void levels(int i,struct RGB_val *colorL);
 # 10 "main.c" 2
 
 
@@ -24330,7 +24329,39 @@ unsigned char I2C_2_Master_Read(unsigned char ack);
 # 13 "main.c" 2
 
 # 1 "./serial.h" 1
-# 13 "./serial.h"
+
+
+
+
+# 1 "./interrupts.h" 1
+
+
+
+
+# 1 "./timers.h" 1
+
+
+
+
+
+
+
+void Timer0_init(void);
+unsigned int get16bitTMR0val(void);
+# 5 "./interrupts.h" 2
+
+# 1 "./serial.h" 1
+# 6 "./interrupts.h" 2
+
+
+
+
+char charFLAG;
+char sendFLAG;
+void Interrupts_init(void);
+void __attribute__((picinterrupt(("high_priority")))) HighISR();
+# 5 "./serial.h" 2
+# 14 "./serial.h"
 volatile char EUSART4RXbuf[20];
 volatile char RxBufWriteCnt=0;
 volatile char RxBufReadCnt=0;
@@ -24367,32 +24398,6 @@ void putCharToVxBuf(char byte);
 char isDataInVxBuf (void);
 # 14 "main.c" 2
 
-# 1 "./interrupts.h" 1
-
-
-
-
-# 1 "./timers.h" 1
-
-
-
-
-
-
-
-void Timer0_init(void);
-unsigned int get16bitTMR0val(void);
-# 5 "./interrupts.h" 2
-
-
-
-
-
-char charFLAG;
-char sendFLAG;
-void Interrupts_init(void);
-void __attribute__((picinterrupt(("high_priority")))) HighISR();
-# 15 "main.c" 2
 
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\stdio.h" 1 3
@@ -24540,19 +24545,21 @@ char *ctermid(char *);
 
 char *tempnam(const char *, const char *);
 # 17 "main.c" 2
-# 44 "main.c"
+# 45 "main.c"
 void main(void){
+    struct RGB_val colorL;
+
     Timer0_init();
     initUSART4();
     Interrupts_init();
-
     color_click_init();
     LightInit();
+
     char j;
     unsigned char buf;
+    Light(0);
     while (1) {
-        unsigned char color = readcard();
-        char a=color+1;
+        unsigned char color = readcard(&colorL);
         if(color==0){unsigned char buf[]="white ";}
         if(color==1){unsigned char buf[]="red ";}
         if(color==2){unsigned char buf[]="blue ";}
@@ -24563,8 +24570,6 @@ void main(void){
         if(color==7){unsigned char buf[]="light blue ";}
         TxBufferedString(&buf);
         Light(0);
-        sendFLAG=1;
-        PIE4bits.TX4IE=1;
         for (j=0;j<3;j++){_delay((unsigned long)((900)*(64000000/4000.0)));}
     }
 }

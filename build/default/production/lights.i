@@ -24256,7 +24256,7 @@ void Light(unsigned char colorcode){
     }
     if (colorcode==1){
         LATGbits.LATG1=1;
-        LATFbits.LATF7=1;
+        LATFbits.LATF7=0;
         LATAbits.LATA4=0;
     }
     if (colorcode==2){
@@ -24269,4 +24269,5 @@ void Light(unsigned char colorcode){
         LATFbits.LATF7=0;
         LATAbits.LATA4=1;
     }
+
 }

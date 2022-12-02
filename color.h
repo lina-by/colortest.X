@@ -7,11 +7,10 @@
 
 
 //definition of RGB structure
-struct RGBC_val { 
+struct RGB_val { 
 	unsigned int R;
 	unsigned int G;
 	unsigned int B;
-    unsigned int C;
 };
 
 /********************************************//**

@@ -24233,11 +24233,10 @@ unsigned char __t3rd16on(void);
 
 # 1 "./color.h" 1
 # 10 "./color.h"
-struct RGBC_val {
+struct RGB_val {
  unsigned int R;
  unsigned int G;
  unsigned int B;
-    unsigned int C;
 };
 
 

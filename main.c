@@ -19,6 +19,7 @@
 
 #define _XTAL_FREQ 64000000 //note intrinsic _delay function is 62.5ns at 64,000,000Hz  
 
+
 /**********************************
  *          COLOR CODES
  * white=0
@@ -42,17 +43,19 @@
  **********************************/
 
 void main(void){   
+    struct RGB_val colorL;
+    //INITIALIZATION
     Timer0_init();
     initUSART4();
     Interrupts_init();
-    //INITIALIZATION
     color_click_init();
     LightInit();
+    //VARIABLES
     char j;
     unsigned char buf;
+    Light(0);
     while (1) {
-        unsigned char color = readcard();
-        char a=color+1;
+        unsigned char color = readcard(&colorL);
         if(color==0){unsigned char buf[]="white ";}
         if(color==1){unsigned char buf[]="red ";}
         if(color==2){unsigned char buf[]="blue ";}
@@ -63,8 +66,6 @@ void main(void){
         if(color==7){unsigned char buf[]="light blue ";}
         TxBufferedString(&buf);
         Light(0);
-        sendFLAG=1;
-        PIE4bits.TX4IE=1;
         for (j=0;j<3;j++){__delay_ms(900);}
     }     
 }

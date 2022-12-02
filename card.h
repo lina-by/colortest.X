@@ -23,7 +23,7 @@ unsigned int red;
 unsigned int blue;
 unsigned int green;
 
-unsigned char readcard(void);
-void levels(int i);
+unsigned char readcard(struct RGB_val *colorL);
+void levels(int i,struct RGB_val *colorL);
 
 #endif

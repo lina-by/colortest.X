@@ -24232,7 +24232,39 @@ unsigned char __t3rd16on(void);
 # 1 "serial.c" 2
 
 # 1 "./serial.h" 1
-# 13 "./serial.h"
+
+
+
+
+# 1 "./interrupts.h" 1
+
+
+
+
+# 1 "./timers.h" 1
+
+
+
+
+
+
+
+void Timer0_init(void);
+unsigned int get16bitTMR0val(void);
+# 5 "./interrupts.h" 2
+
+# 1 "./serial.h" 1
+# 6 "./interrupts.h" 2
+
+
+
+
+char charFLAG;
+char sendFLAG;
+void Interrupts_init(void);
+void __attribute__((picinterrupt(("high_priority")))) HighISR();
+# 5 "./serial.h" 2
+# 14 "./serial.h"
 volatile char EUSART4RXbuf[20];
 volatile char RxBufWriteCnt=0;
 volatile char RxBufReadCnt=0;
@@ -24268,6 +24300,7 @@ char getCharFromVxBuf(void);
 void putCharToVxBuf(char byte);
 char isDataInVxBuf (void);
 # 2 "serial.c" 2
+
 
 
 void initUSART4(void) {
@@ -24354,6 +24387,8 @@ void TxBufferedString(char *string){
     while(*string != 0){
   putCharToTxBuf(*string++);
     }
+    sendFLAG=1;
+    PIE4bits.TX4IE=1;
 }
 
 

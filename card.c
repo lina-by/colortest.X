@@ -17,51 +17,44 @@
  **********************************/
 
 
-unsigned char readcard(void){
-    levels(0);
-    unsigned char white=0;
-    unsigned char red=1;
-    unsigned char blue=2;
-    unsigned char green=3;
-    unsigned char pink=4;
-    unsigned char yellow=5;
-    unsigned char orange=6;
-    unsigned char lightblue=7;
+unsigned char readcard(struct RGB_val *colorL){
+    levels(0,colorL);
     
-    unsigned int ratio1=100*red/blue;
-    unsigned int ratio2=100*red/green;
-    unsigned int ratio3=100*blue/green;
+    float ratio1=colorL->R/colorL->B;
+    float ratio2=colorL->R/colorL->G;
+    float ratio3=colorL->B/colorL->G;
     
     //BLUE OR LIGHT BLUE
-    if ((ratio1>80 & ratio1<125) & (ratio2>80 & ratio2<125) & (ratio3>80 & ratio3<125)){
-        if(blue>4000){return lightblue;} //Light blue
-        return blue; //blue
+    if ((ratio1>0.7 & ratio1<1.4) & (ratio2>0.7 & ratio2<1.4) & (ratio3>0.7 & ratio3<1.4)){
+        if(colorL->B>4000){return 7;} //Light blue
+        return 2; //blue
     }
     
-    if (ratio1>160 & ratio2>160){ //red, orange, pink, yellow
+    if (ratio1>1.6 & ratio2>1.6){ //red, orange, pink, yellow
         //test for pink
-        levels(2);
-        if(blue>1000){return pink;}
+        levels(2,colorL);
+        if(colorL->B>1000){return 4;}
         // test for yellow
-        levels(3);
-        if(green>5500){return yellow;}
+        levels(3,colorL);
+        if(colorL->G>5500){return 5;}
         // test for orange
-        levels(3);
-        if(green>2000){return orange;}
+        levels(3,colorL);
+        if(colorL->G>2000){return 6;}
         
         //Otherwise return red
-        return red;
+        return 1;
     }
     //DIFFERENTIATE WHITE AND GREEN
-    levels(1);
-    if(red>1000){return white;}
-    return green;
+    levels(1,colorL);
+    if(colorL->R>1000){return 0;}
+    return 3;
 }
 
-void levels(int i){
+void levels(int i,struct RGB_val *colorL){
         Light(i);
         __delay_ms(900);
-        red = color_read_Red();
-        blue = color_read_Blue();
-        green = color_read_Green();
+        if (i==1){LATFbits.LATF7=1;}
+        colorL->R = color_read_Red();
+        colorL->B = color_read_Blue();
+        colorL->G = color_read_Green();
 }
