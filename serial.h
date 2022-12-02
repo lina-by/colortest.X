@@ -6,8 +6,8 @@
 #define _XTAL_FREQ 64000000 //note intrinsic _delay function is 62.5ns at 64,000,000Hz  
 
 #define RX_BUF_SIZE 20
-#define TX_BUF_SIZE 60
-#define VX_BUF_SIZE 100
+#define TX_BUF_SIZE 100
+#define VX_BUF_SIZE 60
 
 //variables for a software RX/TX buffer
 volatile char EUSART4RXbuf[RX_BUF_SIZE];

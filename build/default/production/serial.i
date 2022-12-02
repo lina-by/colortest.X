@@ -24237,11 +24237,11 @@ volatile char EUSART4RXbuf[20];
 volatile char RxBufWriteCnt=0;
 volatile char RxBufReadCnt=0;
 
-volatile char EUSART4TXbuf[60];
+volatile char EUSART4TXbuf[100];
 volatile char TxBufWriteCnt=0;
 volatile char TxBufReadCnt=0;
 
-volatile char EUSART4VXbuf[100];
+volatile char EUSART4VXbuf[60];
 volatile char VxBufWriteCnt=0;
 volatile char VxBufReadCnt=0;
 
@@ -24331,13 +24331,13 @@ char isDataInRxBuf (void){
 
 
 char getCharFromTxBuf(void){
-    if (TxBufReadCnt>=60) {TxBufReadCnt=0;}
+    if (TxBufReadCnt>=100) {TxBufReadCnt=0;}
     return EUSART4TXbuf[TxBufReadCnt++];
 }
 
 
 void putCharToTxBuf(char byte){
-    if (TxBufWriteCnt>=60) {TxBufWriteCnt=0;}
+    if (TxBufWriteCnt>=100) {TxBufWriteCnt=0;}
     EUSART4TXbuf[TxBufWriteCnt++]=byte;
 }
 
@@ -24367,13 +24367,13 @@ void sendTxBuf(void){
 
 
 char getCharFromVxBuf(void){
-    if (VxBufReadCnt>=100) {VxBufReadCnt=0;}
+    if (VxBufReadCnt>=60) {VxBufReadCnt=0;}
     return EUSART4VXbuf[VxBufReadCnt++];
 }
 
 
 void putCharToVxBuf(char byte){
-    if (VxBufWriteCnt>=100) {VxBufWriteCnt=0;}
+    if (VxBufWriteCnt>=60) {VxBufWriteCnt=0;}
     EUSART4VXbuf[VxBufWriteCnt++]=byte;
 }
 

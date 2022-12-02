@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.40 build 20220703182018 
-                                                                                               Fri Dec 02 14:35:25 2022
+                                                                                               Fri Dec 02 14:26:21 2022
 
 Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1 
      1                           	processor	18F67K40
@@ -300,10 +300,10 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
    286                           	psect	bssBANK1
    287   000100                     __pbssBANK1:
    288                           	callstack 0
-   289   000100                     _EUSART4TXbuf:
+   289   000100                     _EUSART4VXbuf:
    290                           	callstack 0
    291   000100                     	ds	100
-   292   000164                     _EUSART4VXbuf:
+   292   000164                     _EUSART4TXbuf:
    293                           	callstack 0
    294   000164                     	ds	60
    295   0001A0                     _EUSART4RXbuf:
@@ -3881,8 +3881,8 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   3661                           ;putCharToTxBuf@byte stored from wreg
   3662   001AFA  6E06               	movwf	putCharToTxBuf@byte^0,c
   3663   001AFC                     
-  3664                           ;serial.c: 71:     if (TxBufWriteCnt>=100) {TxBufWriteCnt=0;}
-  3665   001AFC  0E63               	movlw	99
+  3664                           ;serial.c: 71:     if (TxBufWriteCnt>=60) {TxBufWriteCnt=0;}
+  3665   001AFC  0E3B               	movlw	59
   3666   001AFE  6452               	cpfsgt	_TxBufWriteCnt^0,c	;volatile
   3667   001B00  EF84  F00D         	goto	u1111
   3668   001B04  EF86  F00D         	goto	u1110
@@ -3894,7 +3894,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   3674   001B10                     l1981:
   3675                           
   3676                           ;serial.c: 72:     EUSART4TXbuf[TxBufWriteCnt++]=byte;
-  3677   001B10  0E00               	movlw	low _EUSART4TXbuf
+  3677   001B10  0E64               	movlw	low _EUSART4TXbuf
   3678   001B12  2452               	addwf	_TxBufWriteCnt^0,w,c	;volatile
   3679   001B14  6ED9               	movwf	fsr2l,c
   3680   001B16  6ADA               	clrf	fsr2h,c
@@ -4325,8 +4325,8 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   4075   001AA4                     _getCharFromTxBuf:
   4076                           	callstack 21
   4077   001AA4                     
-  4078                           ;serial.c: 65:     if (TxBufReadCnt>=100) {TxBufReadCnt=0;}
-  4079   001AA4  0E63               	movlw	99
+  4078                           ;serial.c: 65:     if (TxBufReadCnt>=60) {TxBufReadCnt=0;}
+  4079   001AA4  0E3B               	movlw	59
   4080   001AA6  6451               	cpfsgt	_TxBufReadCnt^0,c	;volatile
   4081   001AA8  EF58  F00D         	goto	i2u114_41
   4082   001AAC  EF5A  F00D         	goto	i2u114_40
@@ -4342,7 +4342,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   4092   001ABA  0451               	decf	_TxBufReadCnt^0,w,c	;volatile
   4093   001ABC  6E01               	movwf	??_getCharFromTxBuf^0,c
   4094   001ABE  6A02               	clrf	(??_getCharFromTxBuf+1)^0,c
-  4095   001AC0  0E00               	movlw	low _EUSART4TXbuf
+  4095   001AC0  0E64               	movlw	low _EUSART4TXbuf
   4096   001AC2  2401               	addwf	??_getCharFromTxBuf^0,w,c
   4097   001AC4  6ED9               	movwf	fsr2l,c
   4098   001AC6  0E01               	movlw	high _EUSART4TXbuf
@@ -5140,7 +5140,7 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.40 build 20220703182018 
-Symbol Table                                                                                   Fri Dec 02 14:35:25 2022
+Symbol Table                                                                                   Fri Dec 02 14:26:21 2022
 
                _color_read_Red 1804                _color_read_Blue 18F4                             l81 1852  
                            l90 18F2                             l75 1A72                             l84 1942  
@@ -5317,7 +5317,7 @@ Symbol Table                                                                    
                    ??_vfprintf 004C                      _TRISAbits 000F81                      _TRISDbits 000F84  
                     _TRISFbits 000F86                      _TRISGbits 000F87       color_writetoaddr@address 0009  
       ??_I2C_2_Master_RepStart 0007               ?_Interrupts_init 0001              ?_color_read_Clear 000A  
-                 _EUSART4RXbuf 01A0                   _EUSART4TXbuf 0100                   _EUSART4VXbuf 0164  
+                 _EUSART4RXbuf 01A0                   _EUSART4TXbuf 0164                   _EUSART4VXbuf 0100  
             ?_color_read_Green 000A                    ?_initUSART4 0001             ??_color_read_Clear 000C  
            ??_color_read_Green 000C                    vfpfcnvrt@ap 0048                    vfpfcnvrt@cp 0068  
                   vfpfcnvrt@fp 0044                 __end_of_levels 1804            color_read_Clear@tmp 000F  
