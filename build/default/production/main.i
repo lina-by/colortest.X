@@ -24287,6 +24287,7 @@ unsigned char ReturnFLAG=0;
 unsigned int red;
 unsigned int blue;
 unsigned int green;
+unsigned int clear;
 
 unsigned char readcard(void);
 void levels(int i);
@@ -24339,7 +24340,7 @@ volatile char EUSART4TXbuf[60];
 volatile char TxBufWriteCnt=0;
 volatile char TxBufReadCnt=0;
 
-volatile char EUSART4VXbuf[60];
+volatile char EUSART4VXbuf[100];
 volatile char VxBufWriteCnt=0;
 volatile char VxBufReadCnt=0;
 
@@ -24542,29 +24543,19 @@ char *tempnam(const char *, const char *);
 # 17 "main.c" 2
 # 44 "main.c"
 void main(void){
-    Timer0_init();
     initUSART4();
     Interrupts_init();
 
     color_click_init();
     LightInit();
-    char j;
-    unsigned char buf;
+    char i=0;
+    unsigned char buf[100];
     while (1) {
-        unsigned char color = readcard();
-        char a=color+1;
-        if(color==0){unsigned char buf[]="white ";}
-        if(color==1){unsigned char buf[]="red ";}
-        if(color==2){unsigned char buf[]="blue ";}
-        if(color==3){unsigned char buf[]="green ";}
-        if(color==4){unsigned char buf[]="pink ";}
-        if(color==5){unsigned char buf[]="yellow ";}
-        if(color==6){unsigned char buf[]="orange ";}
-        if(color==7){unsigned char buf[]="light blue ";}
+        levels(i);
+        sprintf(&buf,"levels=%d ; red=%d ; blue=%d ; green=%d ; clear=%d\n", i,red,blue,green,clear);
         TxBufferedString(&buf);
-        Light(0);
         sendFLAG=1;
         PIE4bits.TX4IE=1;
-        for (j=0;j<3;j++){_delay((unsigned long)((900)*(64000000/4000.0)));}
+        i=(i+1)%4;
     }
 }

@@ -7,7 +7,7 @@
 
 #define RX_BUF_SIZE 20
 #define TX_BUF_SIZE 60
-#define VX_BUF_SIZE 60
+#define VX_BUF_SIZE 100
 
 //variables for a software RX/TX buffer
 volatile char EUSART4RXbuf[RX_BUF_SIZE];

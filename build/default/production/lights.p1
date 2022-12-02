@@ -2111,8 +2111,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;lights.c: 21:         LATGbits.LATG1=1;
 [e = . . _LATGbits 0 1 -> -> 1 `i `uc ]
 "22
-[; ;lights.c: 22:         LATFbits.LATF7=1;
-[e = . . _LATFbits 0 7 -> -> 1 `i `uc ]
+[; ;lights.c: 22:         LATFbits.LATF7=0;
+[e = . . _LATFbits 0 7 -> -> 0 `i `uc ]
 "23
 [; ;lights.c: 23:         LATAbits.LATA4=0;
 [e = . . _LATAbits 0 4 -> -> 0 `i `uc ]

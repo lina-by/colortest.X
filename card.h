@@ -22,6 +22,7 @@ unsigned char ReturnFLAG=0;
 unsigned int red;
 unsigned int blue;
 unsigned int green;
+unsigned int clear;
 
 unsigned char readcard(void);
 void levels(int i);

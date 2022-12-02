@@ -24258,7 +24258,7 @@ volatile char EUSART4TXbuf[60];
 volatile char TxBufWriteCnt=0;
 volatile char TxBufReadCnt=0;
 
-volatile char EUSART4VXbuf[60];
+volatile char EUSART4VXbuf[100];
 volatile char VxBufWriteCnt=0;
 volatile char VxBufReadCnt=0;
 
@@ -24327,7 +24327,6 @@ void __attribute__((picinterrupt(("high_priority")))) HighISR()
             PIE4bits.TX4IE=0;
             sendFLAG=0;
         }
-        LATDbits.LATD7=!LATDbits.LATD7;
  }
 
     if(PIR4bits.RC4IF){

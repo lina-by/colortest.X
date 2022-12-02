@@ -32,7 +32,6 @@ void __interrupt(high_priority) HighISR()
             PIE4bits.TX4IE=0;
             sendFLAG=0;
         } //when there's no more data to send, disable the interrupt
-        LATDbits.LATD7=!LATDbits.LATD7; //toggle an LED
 	}
     //Read characters
     if(PIR4bits.RC4IF){        //check the interrupt source

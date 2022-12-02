@@ -31,40 +31,30 @@
  * light blue=7
  * 
  * 
-        if(color==0){unsigned char buf[]={'w','h', '\n'};}
-        if(color==1){unsigned char buf[]={'r','e', '\n'};}
-        if(color==2){unsigned char buf[]={'b','l', '\n'};}
-        if(color==3){unsigned char buf[]={'g','r', '\n'};}
-        if(color==4){unsigned char buf[]={'p','i', '\n'};}
-        if(color==5){unsigned char buf[]={'y','e', '\n'};}
-        if(color==6){unsigned char buf[]={'o','r', '\n'};}
-        //if(color==7){unsigned char buf[]="light blue\n";}
+            //red = color_read_Red();
+            //blue = color_read_Blue();
+            //green = color_read_Green();
+            //clear = color_read_Clear();
+            //sprintf(&buf,"levels=%d ; red=%d ; blue=%d ; green=%d ; clear=%d\n", i,red,blue,green,clear);
+            //TxBufferedString(&buf);
+            //sendFLAG=1;
+            //PIE4bits.TX4IE=1;
  **********************************/
 
-void main(void){   
-    Timer0_init();
+void main(void){
     initUSART4();
     Interrupts_init();
     //INITIALIZATION
     color_click_init();
     LightInit();
-    char j;
-    unsigned char buf;
+    char i=0;
+    unsigned char buf[100];
     while (1) {
-        unsigned char color = readcard();
-        char a=color+1;
-        if(color==0){unsigned char buf[]="white ";}
-        if(color==1){unsigned char buf[]="red ";}
-        if(color==2){unsigned char buf[]="blue ";}
-        if(color==3){unsigned char buf[]="green ";}
-        if(color==4){unsigned char buf[]="pink ";}
-        if(color==5){unsigned char buf[]="yellow ";}
-        if(color==6){unsigned char buf[]="orange ";}
-        if(color==7){unsigned char buf[]="light blue ";}
+        levels(i);
+        sprintf(&buf,"levels=%d ; red=%d ; blue=%d ; green=%d ; clear=%d\n", i,red,blue,green,clear);
         TxBufferedString(&buf);
-        Light(0);
         sendFLAG=1;
         PIE4bits.TX4IE=1;
-        for (j=0;j<3;j++){__delay_ms(900);}
-    }     
+        i=(i+1)%4;
+    }
 }

@@ -64,4 +64,5 @@ void levels(int i){
         red = color_read_Red();
         blue = color_read_Blue();
         green = color_read_Green();
+        clear = color_read_Clear();
 }

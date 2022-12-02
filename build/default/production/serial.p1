@@ -2077,8 +2077,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ]
 "21
-[; ;./serial.h: 21: volatile char EUSART4VXbuf[60];
-[v _EUSART4VXbuf `Vuc ~T0 @X0 -> 60 `i e ]
+[; ;./serial.h: 21: volatile char EUSART4VXbuf[100];
+[v _EUSART4VXbuf `Vuc ~T0 @X0 -> 100 `i e ]
 "22
 [; ;./serial.h: 22: volatile char VxBufWriteCnt=0;
 [v _VxBufWriteCnt `Vuc ~T0 @X0 1 e ]
@@ -2360,8 +2360,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _getCharFromVxBuf ]
 [f ]
 "101
-[; ;serial.c: 101:     if (VxBufReadCnt>=60) {VxBufReadCnt=0;}
-[e $ ! >= -> _VxBufReadCnt `i -> 60 `i 2045  ]
+[; ;serial.c: 101:     if (VxBufReadCnt>=100) {VxBufReadCnt=0;}
+[e $ ! >= -> _VxBufReadCnt `i -> 100 `i 2045  ]
 {
 [e = _VxBufReadCnt -> -> 0 `i `uc ]
 }
@@ -2382,8 +2382,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _byte `uc ~T0 @X0 1 r1 ]
 [f ]
 "107
-[; ;serial.c: 107:     if (VxBufWriteCnt>=60) {VxBufWriteCnt=0;}
-[e $ ! >= -> _VxBufWriteCnt `i -> 60 `i 2047  ]
+[; ;serial.c: 107:     if (VxBufWriteCnt>=100) {VxBufWriteCnt=0;}
+[e $ ! >= -> _VxBufWriteCnt `i -> 100 `i 2047  ]
 {
 [e = _VxBufWriteCnt -> -> 0 `i `uc ]
 }

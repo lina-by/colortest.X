@@ -24278,6 +24278,7 @@ unsigned char ReturnFLAG=0;
 unsigned int red;
 unsigned int blue;
 unsigned int green;
+unsigned int clear;
 
 unsigned char readcard(void);
 void levels(int i);
@@ -24367,4 +24368,5 @@ void levels(int i){
         red = color_read_Red();
         blue = color_read_Blue();
         green = color_read_Green();
+        clear = color_read_Clear();
 }
