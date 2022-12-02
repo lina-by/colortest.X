@@ -53,31 +53,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 "5333
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f67k40.h: 5333: extern volatile PIR4bits_t PIR4bits __attribute__((address(0xE37)));
 [v _PIR4bits `VS296 ~T0 @X0 0 e@3639 ]
-"15821
+"40 ./serial.h
+[; ;./serial.h: 40: char isDataInTxBuf (void);
+[v _isDataInTxBuf `(uc ~T0 @X0 0 ef ]
+"15821 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f67k40.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f67k40.h: 15821: extern volatile unsigned char TX4REG __attribute__((address(0xEE4)));
 [v _TX4REG `Vuc ~T0 @X0 0 e@3812 ]
 "38 ./serial.h
 [; ;./serial.h: 38: char getCharFromTxBuf(void);
 [v _getCharFromTxBuf `(uc ~T0 @X0 0 ef ]
-"40
-[; ;./serial.h: 40: char isDataInTxBuf (void);
-[v _isDataInTxBuf `(uc ~T0 @X0 0 ef ]
-"28811 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f67k40.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f67k40.h: 28811:     struct {
-[s S1349 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1349 . LATD0 LATD1 LATD2 LATD3 LATD4 LATD5 LATD6 LATD7 ]
-"28821
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f67k40.h: 28821:     struct {
-[s S1350 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1350 . LD0 LD1 LD2 LD3 LD4 LD5 LD6 LD7 ]
-"28810
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f67k40.h: 28810: typedef union {
-[u S1348 `S1349 1 `S1350 1 ]
-[n S1348 . . . ]
-"28832
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f67k40.h: 28832: extern volatile LATDbits_t LATDbits __attribute__((address(0xF7C)));
-[v _LATDbits `VS1348 ~T0 @X0 0 e@3964 ]
-"15783
+"15783 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f67k40.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f67k40.h: 15783: extern volatile unsigned char RC4REG __attribute__((address(0xEE3)));
 [v _RC4REG `Vuc ~T0 @X0 0 e@3811 ]
 "34 ./serial.h
@@ -2152,25 +2137,22 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! != & -> . . _PIR4bits 0 2 `i -> _sendFLAG `i -> 0 `i 2017  ]
 {
 "29
-[; ;interrupts.c: 29:         TX4REG = getCharFromTxBuf();
-[e = _TX4REG -> ( _getCharFromTxBuf ..  `uc ]
-"30
-[; ;interrupts.c: 30:         if (!isDataInTxBuf()){
+[; ;interrupts.c: 29:         if (!isDataInTxBuf()){
 [e $ ! ! != -> ( _isDataInTxBuf ..  `i -> 0 `i 2018  ]
 {
-"31
-[; ;interrupts.c: 31:             PIE4bits.TX4IE=0;
+"30
+[; ;interrupts.c: 30:             PIE4bits.TX4IE=0;
 [e = . . _PIE4bits 0 2 -> -> 0 `i `uc ]
-"32
-[; ;interrupts.c: 32:             sendFLAG=0;
+"31
+[; ;interrupts.c: 31:             sendFLAG=0;
 [e = _sendFLAG -> -> 0 `i `uc ]
-"33
-[; ;interrupts.c: 33:         }
+"32
+[; ;interrupts.c: 32:         }
 }
 [e :U 2018 ]
-"34
-[; ;interrupts.c: 34:         LATDbits.LATD7=!LATDbits.LATD7;
-[e = . . _LATDbits 0 7 -> -> ! != -> . . _LATDbits 0 7 `i -> 0 `i `i `uc ]
+"33
+[; ;interrupts.c: 33:         TX4REG = getCharFromTxBuf();
+[e = _TX4REG -> ( _getCharFromTxBuf ..  `uc ]
 "35
 [; ;interrupts.c: 35:  }
 }

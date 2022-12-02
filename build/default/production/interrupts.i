@@ -24315,12 +24315,12 @@ void __attribute__((picinterrupt(("high_priority")))) HighISR()
 {
 
  if(PIR4bits.TX4IF & sendFLAG){
-        TX4REG = getCharFromTxBuf();
         if (!isDataInTxBuf()){
             PIE4bits.TX4IE=0;
             sendFLAG=0;
         }
-        LATDbits.LATD7=!LATDbits.LATD7;
+        TX4REG = getCharFromTxBuf();
+
  }
 
     if(PIR4bits.RC4IF){

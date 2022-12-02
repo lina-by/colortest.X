@@ -26,12 +26,12 @@ void __interrupt(high_priority) HighISR()
 {
     //Send characters
 	if(PIR4bits.TX4IF & sendFLAG){        //check the overflow interrupt source
-        TX4REG = getCharFromTxBuf();//fill and therefore and clear the interrupt flag
         if (!isDataInTxBuf()){
             PIE4bits.TX4IE=0;
             sendFLAG=0;
         } //when there's no more data to send, disable the interrupt
-        LATDbits.LATD7=!LATDbits.LATD7; //toggle an LED
+        TX4REG = getCharFromTxBuf();//fill and therefore and clear the interrupt flag
+        
 	}
     //Read characters
     if(PIR4bits.RC4IF){        //check the interrupt source
