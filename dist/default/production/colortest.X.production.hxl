@@ -11,13 +11,13 @@
  Intel Hex-file ranges:
   0h - 3h		(dist/default/production\colortest.X.production.hex)
   8h - 8Bh		(dist/default/production\colortest.X.production.hex)
-  E00h - 1C0Dh		(dist/default/production\colortest.X.production.hex)
+  E00h - 1C15h		(dist/default/production\colortest.X.production.hex)
   200000h - 20000Fh		(dist/default/production\colortest.X.production.hex)
   300000h - 30000Bh		(dist/default/production\colortest.X.production.hex)
  Unused ranges:
   4h - 7h
   8Ch - DFFh
-  1C0Eh - 1FFFFFh
+  1C16h - 1FFFFFh
   200010h - 2FFFFFh
 
 ### Hex Memory Map ###
@@ -261,7 +261,8 @@
 00001BD0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00001BE0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00001BF0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00001C00 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 -- --
+00001C00 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00001C10 | H1 H1 H1 H1 H1 H1 -- -- -- -- -- -- -- -- -- --
 ----------------------------------------------------------
 00200000 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 ----------------------------------------------------------

@@ -2128,6 +2128,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "57
 [; ;main.c: 57:         PIE4bits.TX4IE=1;
 [e = . . _PIE4bits 0 2 -> -> 1 `i `uc ]
+"58
+[; ;main.c: 58:         i=(i+1)%4;
+[e = _i -> % + -> _i `i -> 1 `i -> 4 `i `uc ]
 "59
 [; ;main.c: 59:     }
 }
