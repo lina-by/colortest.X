@@ -494,7 +494,7 @@ text4 E36 1C15 CODE E36 0
 %locals
 dist/default/production\colortest.X.production.o
 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f67k40.h
-C:\Users\linab\AppData\Local\Temp\xcAsb44.s
+C:\Users\linab\AppData\Local\Temp\xcAshb4.s
 10860 1A0A 0 CODE 0
 10862 1A0A 0 CODE 0
 10865 1A0A 0 CODE 0
@@ -875,7 +875,7 @@ interrupts.c
 16 1BD6 0 CODE 0
 17 1BD8 0 CODE 0
 20 1BDA 0 CODE 0
-C:\Users\linab\AppData\Local\Temp\xcAsb44.s
+C:\Users\linab\AppData\Local\Temp\xcAshb4.s
 15873 8 0 CODE 0
 interrupts.c
 26 8 0 CODE 0
