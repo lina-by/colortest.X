@@ -408,7 +408,7 @@ bssBANK0 60 FF BANK0 60 1
 %locals
 dist/default/production\colortest.X.production.o
 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f67k40.h
-C:\Users\linab\AppData\Local\Temp\xcAsirk.s
+C:\Users\linab\AppData\Local\Temp\xcAsb10.s
 9467 AA2 0 CODE 0
 9469 AA2 0 CODE 0
 9472 AA2 0 CODE 0
@@ -716,7 +716,7 @@ interrupts.c
 15 C80 0 CODE 0
 16 C82 0 CODE 0
 19 C84 0 CODE 0
-C:\Users\linab\AppData\Local\Temp\xcAsirk.s
+C:\Users\linab\AppData\Local\Temp\xcAsb10.s
 13472 8 0 CODE 0
 interrupts.c
 25 8 0 CODE 0

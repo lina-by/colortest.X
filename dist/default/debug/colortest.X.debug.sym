@@ -428,7 +428,7 @@ text20 B8A D65 CODE B8A 0
 %locals
 dist/default/debug\colortest.X.debug.o
 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f67k40.h
-C:\Users\linab\AppData\Local\Temp\xcAsi04.s
+C:\Users\linab\AppData\Local\Temp\xcAs1h8.s
 9551 ACA 0 CODE 0
 9553 ACA 0 CODE 0
 9556 ACA 0 CODE 0
@@ -737,7 +737,7 @@ interrupts.c
 15 D28 0 CODE 0
 16 D2A 0 CODE 0
 19 D2C 0 CODE 0
-C:\Users\linab\AppData\Local\Temp\xcAsi04.s
+C:\Users\linab\AppData\Local\Temp\xcAs1h8.s
 13692 8 0 CODE 0
 interrupts.c
 25 8 0 CODE 0

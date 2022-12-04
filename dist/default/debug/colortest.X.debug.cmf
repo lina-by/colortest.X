@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\linab\AppData\Local\Temp\xcAsi04.o
+$C:\Users\linab\AppData\Local\Temp\xcAs1h8.o
 idloc IDLOC 5 200000 200000 10 1 1
 init CODE 0 9A 9A 4 1 2
 reset_vec CODE 0 0 0 6 1 2
@@ -107,7 +107,7 @@ MEDIUMCONST 10E00-1FFFF 1
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/debug\colortest.X.debug.o
-8 intcode CODE >13692:C:\Users\linab\AppData\Local\Temp\xcAsi04.s
+8 intcode CODE >13692:C:\Users\linab\AppData\Local\Temp\xcAs1h8.s
 8 intcode CODE >25:C:\Users\linab\OneDrive\Documents\Ecole\Imperial\Embedded C\Final project\colortest.X\interrupts.c
 12 intcode CODE >28:C:\Users\linab\OneDrive\Documents\Ecole\Imperial\Embedded C\Final project\colortest.X\interrupts.c
 38 intcode CODE >29:C:\Users\linab\OneDrive\Documents\Ecole\Imperial\Embedded C\Final project\colortest.X\interrupts.c
@@ -381,40 +381,40 @@ FC text1 CODE >24:C:\Users\linab\OneDrive\Documents\Ecole\Imperial\Embedded C\Fi
 73E text0 CODE >65:C:\Users\linab\OneDrive\Documents\Ecole\Imperial\Embedded C\Final project\colortest.X\main.c
 74A text0 CODE >66:C:\Users\linab\OneDrive\Documents\Ecole\Imperial\Embedded C\Final project\colortest.X\main.c
 750 text0 CODE >67:C:\Users\linab\OneDrive\Documents\Ecole\Imperial\Embedded C\Final project\colortest.X\main.c
-ACA cinit CODE >9551:C:\Users\linab\AppData\Local\Temp\xcAsi04.s
-ACA cinit CODE >9553:C:\Users\linab\AppData\Local\Temp\xcAsi04.s
-ACA cinit CODE >9556:C:\Users\linab\AppData\Local\Temp\xcAsi04.s
-ACA cinit CODE >9644:C:\Users\linab\AppData\Local\Temp\xcAsi04.s
-ACC cinit CODE >9645:C:\Users\linab\AppData\Local\Temp\xcAsi04.s
-ACE cinit CODE >9646:C:\Users\linab\AppData\Local\Temp\xcAsi04.s
-AD0 cinit CODE >9647:C:\Users\linab\AppData\Local\Temp\xcAsi04.s
-AD2 cinit CODE >9648:C:\Users\linab\AppData\Local\Temp\xcAsi04.s
-AD4 cinit CODE >9649:C:\Users\linab\AppData\Local\Temp\xcAsi04.s
-AD6 cinit CODE >9650:C:\Users\linab\AppData\Local\Temp\xcAsi04.s
-ADA cinit CODE >9651:C:\Users\linab\AppData\Local\Temp\xcAsi04.s
-ADE cinit CODE >9652:C:\Users\linab\AppData\Local\Temp\xcAsi04.s
-ADE cinit CODE >9653:C:\Users\linab\AppData\Local\Temp\xcAsi04.s
-AE0 cinit CODE >9654:C:\Users\linab\AppData\Local\Temp\xcAsi04.s
-AE4 cinit CODE >9655:C:\Users\linab\AppData\Local\Temp\xcAsi04.s
-AE6 cinit CODE >9656:C:\Users\linab\AppData\Local\Temp\xcAsi04.s
-AE8 cinit CODE >9657:C:\Users\linab\AppData\Local\Temp\xcAsi04.s
-AEA cinit CODE >9661:C:\Users\linab\AppData\Local\Temp\xcAsi04.s
-AEE cinit CODE >9662:C:\Users\linab\AppData\Local\Temp\xcAsi04.s
-AF0 cinit CODE >9663:C:\Users\linab\AppData\Local\Temp\xcAsi04.s
-AF0 cinit CODE >9664:C:\Users\linab\AppData\Local\Temp\xcAsi04.s
-AF2 cinit CODE >9665:C:\Users\linab\AppData\Local\Temp\xcAsi04.s
-AF4 cinit CODE >9666:C:\Users\linab\AppData\Local\Temp\xcAsi04.s
-AF6 cinit CODE >9669:C:\Users\linab\AppData\Local\Temp\xcAsi04.s
-AFA cinit CODE >9670:C:\Users\linab\AppData\Local\Temp\xcAsi04.s
-AFC cinit CODE >9671:C:\Users\linab\AppData\Local\Temp\xcAsi04.s
-AFC cinit CODE >9672:C:\Users\linab\AppData\Local\Temp\xcAsi04.s
-AFE cinit CODE >9673:C:\Users\linab\AppData\Local\Temp\xcAsi04.s
-B00 cinit CODE >9674:C:\Users\linab\AppData\Local\Temp\xcAsi04.s
-B02 cinit CODE >9680:C:\Users\linab\AppData\Local\Temp\xcAsi04.s
-B02 cinit CODE >9682:C:\Users\linab\AppData\Local\Temp\xcAsi04.s
-B04 cinit CODE >9683:C:\Users\linab\AppData\Local\Temp\xcAsi04.s
-B06 cinit CODE >9684:C:\Users\linab\AppData\Local\Temp\xcAsi04.s
-B08 cinit CODE >9685:C:\Users\linab\AppData\Local\Temp\xcAsi04.s
+ACA cinit CODE >9551:C:\Users\linab\AppData\Local\Temp\xcAs1h8.s
+ACA cinit CODE >9553:C:\Users\linab\AppData\Local\Temp\xcAs1h8.s
+ACA cinit CODE >9556:C:\Users\linab\AppData\Local\Temp\xcAs1h8.s
+ACA cinit CODE >9644:C:\Users\linab\AppData\Local\Temp\xcAs1h8.s
+ACC cinit CODE >9645:C:\Users\linab\AppData\Local\Temp\xcAs1h8.s
+ACE cinit CODE >9646:C:\Users\linab\AppData\Local\Temp\xcAs1h8.s
+AD0 cinit CODE >9647:C:\Users\linab\AppData\Local\Temp\xcAs1h8.s
+AD2 cinit CODE >9648:C:\Users\linab\AppData\Local\Temp\xcAs1h8.s
+AD4 cinit CODE >9649:C:\Users\linab\AppData\Local\Temp\xcAs1h8.s
+AD6 cinit CODE >9650:C:\Users\linab\AppData\Local\Temp\xcAs1h8.s
+ADA cinit CODE >9651:C:\Users\linab\AppData\Local\Temp\xcAs1h8.s
+ADE cinit CODE >9652:C:\Users\linab\AppData\Local\Temp\xcAs1h8.s
+ADE cinit CODE >9653:C:\Users\linab\AppData\Local\Temp\xcAs1h8.s
+AE0 cinit CODE >9654:C:\Users\linab\AppData\Local\Temp\xcAs1h8.s
+AE4 cinit CODE >9655:C:\Users\linab\AppData\Local\Temp\xcAs1h8.s
+AE6 cinit CODE >9656:C:\Users\linab\AppData\Local\Temp\xcAs1h8.s
+AE8 cinit CODE >9657:C:\Users\linab\AppData\Local\Temp\xcAs1h8.s
+AEA cinit CODE >9661:C:\Users\linab\AppData\Local\Temp\xcAs1h8.s
+AEE cinit CODE >9662:C:\Users\linab\AppData\Local\Temp\xcAs1h8.s
+AF0 cinit CODE >9663:C:\Users\linab\AppData\Local\Temp\xcAs1h8.s
+AF0 cinit CODE >9664:C:\Users\linab\AppData\Local\Temp\xcAs1h8.s
+AF2 cinit CODE >9665:C:\Users\linab\AppData\Local\Temp\xcAs1h8.s
+AF4 cinit CODE >9666:C:\Users\linab\AppData\Local\Temp\xcAs1h8.s
+AF6 cinit CODE >9669:C:\Users\linab\AppData\Local\Temp\xcAs1h8.s
+AFA cinit CODE >9670:C:\Users\linab\AppData\Local\Temp\xcAs1h8.s
+AFC cinit CODE >9671:C:\Users\linab\AppData\Local\Temp\xcAs1h8.s
+AFC cinit CODE >9672:C:\Users\linab\AppData\Local\Temp\xcAs1h8.s
+AFE cinit CODE >9673:C:\Users\linab\AppData\Local\Temp\xcAs1h8.s
+B00 cinit CODE >9674:C:\Users\linab\AppData\Local\Temp\xcAs1h8.s
+B02 cinit CODE >9680:C:\Users\linab\AppData\Local\Temp\xcAs1h8.s
+B02 cinit CODE >9682:C:\Users\linab\AppData\Local\Temp\xcAs1h8.s
+B04 cinit CODE >9683:C:\Users\linab\AppData\Local\Temp\xcAs1h8.s
+B06 cinit CODE >9684:C:\Users\linab\AppData\Local\Temp\xcAs1h8.s
+B08 cinit CODE >9685:C:\Users\linab\AppData\Local\Temp\xcAs1h8.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -436,16 +436,16 @@ __Hspace_4 60000C 0 ABS 0 - dist/default/debug\colortest.X.debug.o
 color_writetoaddr@address 9 0 COMRAM 1 cstackCOMRAM dist/default/debug\colortest.X.debug.o
 __HidataBANK0 0 0 ABS 0 idataBANK0 dist/default/debug\colortest.X.debug.o
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/debug\colortest.X.debug.o
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\linab\AppData\Local\Temp\xcAsi04.o
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\linab\AppData\Local\Temp\xcAs1h8.o
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/debug\colortest.X.debug.o
 main@j AA 0 BANK0 1 cstackBANK0 dist/default/debug\colortest.X.debug.o
 __Lsmallconst 0 0 SMALLCONST 0 smallconst dist/default/debug\colortest.X.debug.o
 main@buf_101 74 0 BANK0 1 cstackBANK0 dist/default/debug\colortest.X.debug.o
 main@buf_103 60 0 BANK0 1 cstackBANK0 dist/default/debug\colortest.X.debug.o
-___sp 0 0 STACK 2 stack C:\Users\linab\AppData\Local\Temp\xcAsi04.o
+___sp 0 0 STACK 2 stack C:\Users\linab\AppData\Local\Temp\xcAs1h8.o
 _main 5FC 0 CODE 0 text0 dist/default/debug\colortest.X.debug.o
 btemp 49 0 COMRAM 1 temp dist/default/debug\colortest.X.debug.o
-start 9A 0 CODE 0 init C:\Users\linab\AppData\Local\Temp\xcAsi04.o
+start 9A 0 CODE 0 init C:\Users\linab\AppData\Local\Temp\xcAs1h8.o
 __HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/debug\colortest.X.debug.o
 putCharToRxBuf@byte 1 0 COMRAM 1 cstackCOMRAM dist/default/debug\colortest.X.debug.o
 __end_of_LightInit D3C 0 CODE 0 text22 dist/default/debug\colortest.X.debug.o
@@ -458,11 +458,11 @@ putCharToTxBuf@byte 6 0 COMRAM 1 cstackCOMRAM dist/default/debug\colortest.X.deb
 ttemp5 4A 0 COMRAM 1 temp dist/default/debug\colortest.X.debug.o
 ttemp6 4D 0 COMRAM 1 temp dist/default/debug\colortest.X.debug.o
 ttemp7 51 0 COMRAM 1 temp dist/default/debug\colortest.X.debug.o
-__accesstop 60 0 ABS 0 - C:\Users\linab\AppData\Local\Temp\xcAsi04.o
-intlevel0 0 0 CODE 0 text C:\Users\linab\AppData\Local\Temp\xcAsi04.o
-intlevel1 0 0 CODE 0 text C:\Users\linab\AppData\Local\Temp\xcAsi04.o
-intlevel2 0 0 CODE 0 text C:\Users\linab\AppData\Local\Temp\xcAsi04.o
-intlevel3 0 0 CODE 0 text C:\Users\linab\AppData\Local\Temp\xcAsi04.o
+__accesstop 60 0 ABS 0 - C:\Users\linab\AppData\Local\Temp\xcAs1h8.o
+intlevel0 0 0 CODE 0 text C:\Users\linab\AppData\Local\Temp\xcAs1h8.o
+intlevel1 0 0 CODE 0 text C:\Users\linab\AppData\Local\Temp\xcAs1h8.o
+intlevel2 0 0 CODE 0 text C:\Users\linab\AppData\Local\Temp\xcAs1h8.o
+intlevel3 0 0 CODE 0 text C:\Users\linab\AppData\Local\Temp\xcAs1h8.o
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/debug\colortest.X.debug.o
 _LightInit D2E 0 CODE 0 text22 dist/default/debug\colortest.X.debug.o
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/debug\colortest.X.debug.o
@@ -470,8 +470,8 @@ wtemp8 4A 0 COMRAM 1 temp dist/default/debug\colortest.X.debug.o
 __Hifardata 0 0 CODE 0 ifardata dist/default/debug\colortest.X.debug.o
 __Hclrtext 0 0 ABS 0 clrtext dist/default/debug\colortest.X.debug.o
 __end_of_Interrupts_init D2E 0 CODE 0 text23 dist/default/debug\colortest.X.debug.o
-___inthi_sp 0 0 STACK 2 stack C:\Users\linab\AppData\Local\Temp\xcAsi04.o
-___intlo_sp 0 0 STACK 2 stack C:\Users\linab\AppData\Local\Temp\xcAsi04.o
+___inthi_sp 0 0 STACK 2 stack C:\Users\linab\AppData\Local\Temp\xcAs1h8.o
+___intlo_sp 0 0 STACK 2 stack C:\Users\linab\AppData\Local\Temp\xcAs1h8.o
 I2C_2_Master_Read@ack 8 0 COMRAM 1 cstackCOMRAM dist/default/debug\colortest.X.debug.o
 I2C_2_Master_Read@tmp 9 0 COMRAM 1 cstackCOMRAM dist/default/debug\colortest.X.debug.o
 color_writetoaddr@value 8 0 COMRAM 1 cstackCOMRAM dist/default/debug\colortest.X.debug.o
@@ -509,7 +509,7 @@ __end_of_I2C_2_Master_Start D66 0 CODE 0 text17 dist/default/debug\colortest.X.d
 __end_of_I2C_2_Master_Write D48 0 CODE 0 text15 dist/default/debug\colortest.X.debug.o
 _TX4REG EE4 0 ABS 0 - dist/default/debug\colortest.X.debug.o
 I2C_2_Master_Write@data_byte 7 0 COMRAM 1 cstackCOMRAM dist/default/debug\colortest.X.debug.o
-isa$xinst 0 0 ABS 0 - C:\Users\linab\AppData\Local\Temp\xcAsi04.o
+isa$xinst 0 0 ABS 0 - C:\Users\linab\AppData\Local\Temp\xcAs1h8.o
 __Hbank0 0 0 ABS 0 bank0 dist/default/debug\colortest.X.debug.o
 __Hbank1 0 0 ABS 0 bank1 dist/default/debug\colortest.X.debug.o
 __Hbank2 0 0 ABS 0 bank2 dist/default/debug\colortest.X.debug.o
@@ -548,7 +548,7 @@ __Hbank13 0 0 ABS 0 bank13 dist/default/debug\colortest.X.debug.o
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/debug\colortest.X.debug.o
 __Hbigram 0 0 ABS 0 bigram dist/default/debug\colortest.X.debug.o
 __Hbigsfr 0 0 ABS 0 bigsfr dist/default/debug\colortest.X.debug.o
-__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\linab\AppData\Local\Temp\xcAsi04.o
+__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\linab\AppData\Local\Temp\xcAs1h8.o
 ___xxtofl@arg 17 0 COMRAM 1 cstackCOMRAM dist/default/debug\colortest.X.debug.o
 ___xxtofl@exp 16 0 COMRAM 1 cstackCOMRAM dist/default/debug\colortest.X.debug.o
 ___xxtofl@val D 0 COMRAM 1 cstackCOMRAM dist/default/debug\colortest.X.debug.o
@@ -711,13 +711,13 @@ ___lwdiv@divisor 8 0 COMRAM 1 cstackCOMRAM dist/default/debug\colortest.X.debug.
 ?_color_read_Red A 0 COMRAM 1 cstackCOMRAM dist/default/debug\colortest.X.debug.o
 HighISR@reg 5 0 COMRAM 1 cstackCOMRAM dist/default/debug\colortest.X.debug.o
 __Lfardata 0 0 FARRAM 0 fardata dist/default/debug\colortest.X.debug.o
-isa$std 1 0 ABS 0 - C:\Users\linab\AppData\Local\Temp\xcAsi04.o
+isa$std 1 0 ABS 0 - C:\Users\linab\AppData\Local\Temp\xcAs1h8.o
 _readcard 9E 0 CODE 0 text1 dist/default/debug\colortest.X.debug.o
 _EUSART4RXbuf 2D 0 COMRAM 1 bssCOMRAM dist/default/debug\colortest.X.debug.o
 _EUSART4TXbuf 100 0 BANK1 1 bssBANK1 dist/default/debug\colortest.X.debug.o
 _EUSART4VXbuf 164 0 BANK1 1 bssBANK1 dist/default/debug\colortest.X.debug.o
-stackhi 0 0 ABS 0 - C:\Users\linab\AppData\Local\Temp\xcAsi04.o
-stacklo 0 0 ABS 0 - C:\Users\linab\AppData\Local\Temp\xcAsi04.o
+stackhi 0 0 ABS 0 - C:\Users\linab\AppData\Local\Temp\xcAs1h8.o
+stacklo 0 0 ABS 0 - C:\Users\linab\AppData\Local\Temp\xcAs1h8.o
 __Lintcode 8 0 CODE 0 intcode dist/default/debug\colortest.X.debug.o
 __Lintret 0 0 ABS 0 intret dist/default/debug\colortest.X.debug.o
 __Lirdata 0 0 CODE 0 irdata dist/default/debug\colortest.X.debug.o
@@ -789,7 +789,7 @@ __Ltext25 0 0 ABS 0 text25 dist/default/debug\colortest.X.debug.o
 __Ltext26 0 0 ABS 0 text26 dist/default/debug\colortest.X.debug.o
 __Ltext27 0 0 ABS 0 text27 dist/default/debug\colortest.X.debug.o
 __end_of_color_writetoaddr CE8 0 CODE 0 text14 dist/default/debug\colortest.X.debug.o
-__ramtop E00 0 RAM 0 ramtop C:\Users\linab\AppData\Local\Temp\xcAsi04.o
+__ramtop E00 0 RAM 0 ramtop C:\Users\linab\AppData\Local\Temp\xcAs1h8.o
 _HighISR 8 0 CODE 0 intcode dist/default/debug\colortest.X.debug.o
 __Lpowerup 9A 0 CODE 0 powerup dist/default/debug\colortest.X.debug.o
 ?___xxtofl D 0 COMRAM 1 cstackCOMRAM dist/default/debug\colortest.X.debug.o
@@ -797,8 +797,8 @@ __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/debug\colortest.X.debug.o
 _isDataInTxBuf D06 0 CODE 0 text26 dist/default/debug\colortest.X.debug.o
 __Lreset_vec 0 0 CODE 0 reset_vec dist/default/debug\colortest.X.debug.o
 _I2C_2_Master_RepStart D48 0 CODE 0 text6 dist/default/debug\colortest.X.debug.o
-___heap_hi 0 0 ABS 0 - C:\Users\linab\AppData\Local\Temp\xcAsi04.o
-___heap_lo 0 0 ABS 0 - C:\Users\linab\AppData\Local\Temp\xcAsi04.o
+___heap_hi 0 0 ABS 0 - C:\Users\linab\AppData\Local\Temp\xcAs1h8.o
+___heap_lo 0 0 ABS 0 - C:\Users\linab\AppData\Local\Temp\xcAs1h8.o
 _I2C_2_Master_Idle CA0 0 CODE 0 text18 dist/default/debug\colortest.X.debug.o
 _I2C_2_Master_Init C22 0 CODE 0 text19 dist/default/debug\colortest.X.debug.o
 _I2C_2_Master_Read B0C 0 CODE 0 text7 dist/default/debug\colortest.X.debug.o
