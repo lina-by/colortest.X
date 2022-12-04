@@ -2021,130 +2021,118 @@ Version 4.0 HI-TECH Software Intermediate Code
 "22
 [; ;card.c: 22:     levels(0,colorL);
 [e ( _levels (2 , -> 0 `i _colorL ]
-"24
-[; ;card.c: 24:     float ratio1=colorL->R/colorL->B;
-[v _ratio1 `f ~T0 @X0 1 a ]
-[e = _ratio1 -> / . *U _colorL 0 . *U _colorL 2 `f ]
 "25
-[; ;card.c: 25:     float ratio2=colorL->R/colorL->G;
-[v _ratio2 `f ~T0 @X0 1 a ]
-[e = _ratio2 -> / . *U _colorL 0 . *U _colorL 1 `f ]
-"26
-[; ;card.c: 26:     float ratio3=colorL->B/colorL->G;
-[v _ratio3 `f ~T0 @X0 1 a ]
-[e = _ratio3 -> / . *U _colorL 2 . *U _colorL 1 `f ]
-"29
-[; ;card.c: 29:     if ((ratio1>80 & ratio1<125) & (ratio2>80 & ratio2<125) & (ratio3>80 & ratio3<125)){
-[e $ ! & & & > _ratio1 -> -> 80 `i `f < _ratio1 -> -> 125 `i `f & > _ratio2 -> -> 80 `i `f < _ratio2 -> -> 125 `i `f & > _ratio3 -> -> 80 `i `f < _ratio3 -> -> 125 `i `f 2017  ]
+[; ;card.c: 25:     if (colorL->R>colorL->B*1.6 & colorL->R>colorL->G*1.6){
+[e $ ! & > -> . *U _colorL 0 `d * -> . *U _colorL 2 `d .1.6 > -> . *U _colorL 0 `d * -> . *U _colorL 1 `d .1.6 2017  ]
 {
-"30
-[; ;card.c: 30:         if(colorL->B>4000){return 7;}
-[e $ ! > . *U _colorL 2 -> -> 4000 `i `ui 2018  ]
-{
-[e ) -> -> 7 `i `uc ]
-[e $UE 2016  ]
-}
-[e :U 2018 ]
-"31
-[; ;card.c: 31:         return 2;
-[e ) -> -> 2 `i `uc ]
-[e $UE 2016  ]
-"32
-[; ;card.c: 32:     }
-}
-[e :U 2017 ]
-"34
-[; ;card.c: 34:     if (colorL->R>colorL->B*1.6 & colorL->R>colorL->G*1.6){
-[e $ ! & > -> . *U _colorL 0 `d * -> . *U _colorL 2 `d .1.6 > -> . *U _colorL 0 `d * -> . *U _colorL 1 `d .1.6 2019  ]
-{
-"36
-[; ;card.c: 36:         levels(2,colorL);
+"27
+[; ;card.c: 27:         levels(2,colorL);
 [e ( _levels (2 , -> 2 `i _colorL ]
-"37
-[; ;card.c: 37:         if(colorL->B>2*colorL->R){return 4;}
-[e $ ! > . *U _colorL 2 * -> -> 2 `i `ui . *U _colorL 0 2020  ]
+"28
+[; ;card.c: 28:         if(colorL->B>2*colorL->R){return 4;}
+[e $ ! > . *U _colorL 2 * -> -> 2 `i `ui . *U _colorL 0 2018  ]
 {
 [e ) -> -> 4 `i `uc ]
 [e $UE 2016  ]
 }
-[e :U 2020 ]
-"39
-[; ;card.c: 39:         levels(3,colorL);
+[e :U 2018 ]
+"30
+[; ;card.c: 30:         levels(3,colorL);
 [e ( _levels (2 , -> 3 `i _colorL ]
-"40
-[; ;card.c: 40:         if(colorL->G>3.8*colorL->R){return 5;}
-[e $ ! > -> . *U _colorL 1 `d * .3.8 -> . *U _colorL 0 `d 2021  ]
+"31
+[; ;card.c: 31:         if(colorL->G>3.8*colorL->R){return 5;}
+[e $ ! > -> . *U _colorL 1 `d * .3.8 -> . *U _colorL 0 `d 2019  ]
 {
 [e ) -> -> 5 `i `uc ]
 [e $UE 2016  ]
 }
-[e :U 2021 ]
-"42
-[; ;card.c: 42:         if(colorL->G>2*colorL->R){return 6;}
-[e $ ! > . *U _colorL 1 * -> -> 2 `i `ui . *U _colorL 0 2022  ]
+[e :U 2019 ]
+"33
+[; ;card.c: 33:         if(colorL->G>2*colorL->R){return 6;}
+[e $ ! > . *U _colorL 1 * -> -> 2 `i `ui . *U _colorL 0 2020  ]
 {
 [e ) -> -> 6 `i `uc ]
 [e $UE 2016  ]
 }
-[e :U 2022 ]
-"45
-[; ;card.c: 45:         return 1;
+[e :U 2020 ]
+"36
+[; ;card.c: 36:         return 1;
 [e ) -> -> 1 `i `uc ]
 [e $UE 2016  ]
-"46
-[; ;card.c: 46:     }
+"37
+[; ;card.c: 37:     }
 }
-[e :U 2019 ]
-"48
-[; ;card.c: 48:     levels(1,colorL);
+[e :U 2017 ]
+"41
+[; ;card.c: 41:     if (colorL->R<1.3*colorL->G & colorL->R<1.3*colorL->B){
+[e $ ! & < -> . *U _colorL 0 `d * .1.3 -> . *U _colorL 1 `d < -> . *U _colorL 0 `d * .1.3 -> . *U _colorL 2 `d 2021  ]
+{
+"42
+[; ;card.c: 42:         if(colorL->B>4000){return 7;}
+[e $ ! > . *U _colorL 2 -> -> 4000 `i `ui 2022  ]
+{
+[e ) -> -> 7 `i `uc ]
+[e $UE 2016  ]
+}
+[e :U 2022 ]
+"43
+[; ;card.c: 43:         return 2;
+[e ) -> -> 2 `i `uc ]
+[e $UE 2016  ]
+"44
+[; ;card.c: 44:     }
+}
+[e :U 2021 ]
+"47
+[; ;card.c: 47:     levels(1,colorL);
 [e ( _levels (2 , -> 1 `i _colorL ]
-"49
-[; ;card.c: 49:     if(colorL->R>1000){return 0;}
+"48
+[; ;card.c: 48:     if(colorL->R>1000){return 0;}
 [e $ ! > . *U _colorL 0 -> -> 1000 `i `ui 2023  ]
 {
 [e ) -> -> 0 `i `uc ]
 [e $UE 2016  ]
 }
 [e :U 2023 ]
-"50
-[; ;card.c: 50:     return 3;
+"49
+[; ;card.c: 49:     return 3;
 [e ) -> -> 3 `i `uc ]
 [e $UE 2016  ]
-"51
-[; ;card.c: 51: }
+"50
+[; ;card.c: 50: }
 [e :UE 2016 ]
 }
-"53
-[; ;card.c: 53: void levels(int i,struct RGB_val *colorL){
+"52
+[; ;card.c: 52: void levels(int i,struct RGB_val *colorL){
 [v _levels `(v ~T0 @X0 1 ef2`i`*S2015 ]
 {
 [e :U _levels ]
 [v _i `i ~T0 @X0 1 r1 ]
 [v _colorL `*S2015 ~T0 @X0 1 r2 ]
 [f ]
-"54
-[; ;card.c: 54:         Light(i);
+"53
+[; ;card.c: 53:         Light(i);
 [e ( _Light (1 -> _i `uc ]
-"55
-[; ;card.c: 55:         _delay((unsigned long)((900)*(64000000/4000.0)));
+"54
+[; ;card.c: 54:         _delay((unsigned long)((900)*(64000000/4000.0)));
 [e ( __delay (1 -> * -> -> 900 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
-"56
-[; ;card.c: 56:         if (i==1){LATFbits.LATF7=1;}
+"55
+[; ;card.c: 55:         if (i==1){LATFbits.LATF7=1;}
 [e $ ! == _i -> 1 `i 2025  ]
 {
 [e = . . _LATFbits 0 7 -> -> 1 `i `uc ]
 }
 [e :U 2025 ]
-"57
-[; ;card.c: 57:         colorL->R = color_read_Red();
+"56
+[; ;card.c: 56:         colorL->R = color_read_Red();
 [e = . *U _colorL 0 ( _color_read_Red ..  ]
-"58
-[; ;card.c: 58:         colorL->B = color_read_Blue();
+"57
+[; ;card.c: 57:         colorL->B = color_read_Blue();
 [e = . *U _colorL 2 ( _color_read_Blue ..  ]
-"59
-[; ;card.c: 59:         colorL->G = color_read_Green();
+"58
+[; ;card.c: 58:         colorL->G = color_read_Green();
 [e = . *U _colorL 1 ( _color_read_Green ..  ]
-"60
-[; ;card.c: 60: }
+"59
+[; ;card.c: 59: }
 [e :UE 2024 ]
 }
