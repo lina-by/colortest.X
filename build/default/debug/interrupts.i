@@ -24254,11 +24254,11 @@ volatile char EUSART4RXbuf[20];
 volatile char RxBufWriteCnt=0;
 volatile char RxBufReadCnt=0;
 
-volatile char EUSART4TXbuf[60];
+volatile char EUSART4TXbuf[100];
 volatile char TxBufWriteCnt=0;
 volatile char TxBufReadCnt=0;
 
-volatile char EUSART4VXbuf[100];
+volatile char EUSART4VXbuf[60];
 volatile char VxBufWriteCnt=0;
 volatile char VxBufReadCnt=0;
 

@@ -55,6 +55,6 @@ void main(void){
         TxBufferedString(&buf);
         sendFLAG=1;
         PIE4bits.TX4IE=1;
-        i=(i+1)%4;
+        //i=(i+1)%4;
     }
 }

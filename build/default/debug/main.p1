@@ -2048,8 +2048,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ]
 "17
-[; ;./serial.h: 17: volatile char EUSART4TXbuf[60];
-[v _EUSART4TXbuf `Vuc ~T0 @X0 -> 60 `i e ]
+[; ;./serial.h: 17: volatile char EUSART4TXbuf[100];
+[v _EUSART4TXbuf `Vuc ~T0 @X0 -> 100 `i e ]
 "18
 [; ;./serial.h: 18: volatile char TxBufWriteCnt=0;
 [v _TxBufWriteCnt `Vuc ~T0 @X0 1 e ]
@@ -2063,8 +2063,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ]
 "21
-[; ;./serial.h: 21: volatile char EUSART4VXbuf[100];
-[v _EUSART4VXbuf `Vuc ~T0 @X0 -> 100 `i e ]
+[; ;./serial.h: 21: volatile char EUSART4VXbuf[60];
+[v _EUSART4VXbuf `Vuc ~T0 @X0 -> 60 `i e ]
 "22
 [; ;./serial.h: 22: volatile char VxBufWriteCnt=0;
 [v _VxBufWriteCnt `Vuc ~T0 @X0 1 e ]
