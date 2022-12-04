@@ -21,9 +21,13 @@
 unsigned char readcard(struct RGB_val *colorL){
     levels(0,colorL);
     //BLACK
+    if(colorL->R+colorL->G+colorL->B<1000){return 8;}
+    //BLUES
+    if (colorL->R<1.3*colorL->G & colorL->R<1.3*colorL->B){return 2;}
+    if (colorL->R<1.6*colorL->G & colorL->R<1.6*colorL->B){return 7;}
     
-    //BLUE
-    if (colorL->R<1.3*colorL->G & colorL->R<1.3*colorL->B){return 2}
+    //GREEN
+    if (colorL->R<colorL->G){return 3;}
     
     // RED ORANGE PINK YELLOW
     if (colorL->R>colorL->B*1.6 & colorL->R>colorL->G*1.6){ //red, orange, pink, yellow
@@ -39,14 +43,7 @@ unsigned char readcard(struct RGB_val *colorL){
         //Otherwise return red
         return 1;
     }
-    
-    //LIGHT BLUE
-    //DIFFERENTIATE WHITE AND GREEN
-    levels(1,colorL);
-    if(colorL->R>1000){return 0;}
-    
-    
-    return 3;
+    return 0;
 }
 
 void levels(int i,struct RGB_val *colorL){

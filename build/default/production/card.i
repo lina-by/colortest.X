@@ -24321,6 +24321,14 @@ unsigned char I2C_2_Master_Read(unsigned char ack);
 unsigned char readcard(struct RGB_val *colorL){
     levels(0,colorL);
 
+    if(colorL->R+colorL->G+colorL->B<1000){return 8;}
+
+    if (colorL->R<1.3*colorL->G & colorL->R<1.3*colorL->B){return 2;}
+    if (colorL->R<1.6*colorL->G & colorL->R<1.6*colorL->B){return 7;}
+
+
+    if (colorL->R<colorL->G){return 3;}
+
 
     if (colorL->R>colorL->B*1.6 & colorL->R>colorL->G*1.6){
 
@@ -24335,18 +24343,7 @@ unsigned char readcard(struct RGB_val *colorL){
 
         return 1;
     }
-
-
-
-    if (colorL->R<1.3*colorL->G & colorL->R<1.3*colorL->B){
-        if(colorL->B>4000){return 7;}
-        return 2;
-    }
-
-
-    levels(1,colorL);
-    if(colorL->R>1000){return 0;}
-    return 3;
+    return 0;
 }
 
 void levels(int i,struct RGB_val *colorL){

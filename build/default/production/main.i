@@ -24553,6 +24553,7 @@ void main(void){
         if(color==5){buf[0]='y';}
         if(color==6){buf[0]='o';}
         if(color==7){buf[0]='l';}
+        if(color==8){buf[0]='x';}
         TxBufferedString(&buf);
         Light(0);
         for (j=0;j<3;j++){_delay((unsigned long)((900)*(64000000/4000.0)));}

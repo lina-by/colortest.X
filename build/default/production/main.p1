@@ -2167,32 +2167,39 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 2029 ]
 "65
-[; ;main.c: 65:         TxBufferedString(&buf);
-[e ( _TxBufferedString (1 -> &U _buf `*uc ]
+[; ;main.c: 65:         if(color==8){buf[0]='x';}
+[e $ ! == -> _color `i -> 8 `i 2030  ]
+{
+[e = *U + &U _buf * -> -> -> 0 `i `ui `ux -> -> # *U &U _buf `ui `ux -> -> 120 `ui `uc ]
+}
+[e :U 2030 ]
 "66
-[; ;main.c: 66:         Light(0);
-[e ( _Light (1 -> -> 0 `i `uc ]
+[; ;main.c: 66:         TxBufferedString(&buf);
+[e ( _TxBufferedString (1 -> &U _buf `*uc ]
 "67
-[; ;main.c: 67:         for (j=0;j<3;j++){_delay((unsigned long)((900)*(64000000/4000.0)));}
+[; ;main.c: 67:         Light(0);
+[e ( _Light (1 -> -> 0 `i `uc ]
+"68
+[; ;main.c: 68:         for (j=0;j<3;j++){_delay((unsigned long)((900)*(64000000/4000.0)));}
 {
 [e = _j -> -> 0 `i `uc ]
-[e $ < -> _j `i -> 3 `i 2030  ]
-[e $U 2031  ]
-[e :U 2030 ]
+[e $ < -> _j `i -> 3 `i 2031  ]
+[e $U 2032  ]
+[e :U 2031 ]
 {
 [e ( __delay (1 -> * -> -> 900 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
 }
 [e ++ _j -> -> 1 `i `uc ]
-[e $ < -> _j `i -> 3 `i 2030  ]
-[e :U 2031 ]
+[e $ < -> _j `i -> 3 `i 2031  ]
+[e :U 2032 ]
 }
-"68
-[; ;main.c: 68:     }
+"69
+[; ;main.c: 69:     }
 }
 [e :U 2019 ]
 [e $U 2020  ]
 [e :U 2021 ]
-"69
-[; ;main.c: 69: }
+"70
+[; ;main.c: 70: }
 [e :UE 2018 ]
 }
