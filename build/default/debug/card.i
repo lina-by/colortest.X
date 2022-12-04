@@ -24326,21 +24326,22 @@ unsigned char readcard(struct RGB_val *colorL){
     float ratio3=colorL->B/colorL->G;
 
 
-    if ((ratio1>0.7 & ratio1<1.4) & (ratio2>0.7 & ratio2<1.4) & (ratio3>0.7 & ratio3<1.4)){
+    if ((ratio1>80 & ratio1<125) & (ratio2>80 & ratio2<125) & (ratio3>80 & ratio3<125)){
         if(colorL->B>4000){return 7;}
         return 2;
     }
 
-    if (ratio1>1.6 & ratio2>1.6){
+    if (ratio1>160 & ratio2>160){
 
         levels(2,colorL);
-        if(colorL->B>1000){return 4;}
+        ratio1=100*colorL->R/colorL->B;
+        if(ratio1<50){return 4;}
 
         levels(3,colorL);
-        if(colorL->G>5500){return 5;}
+        ratio2=100*colorL->R/colorL->G;
+        if(ratio2<25){return 5;}
 
-        levels(3,colorL);
-        if(colorL->G>2000){return 6;}
+        if(ratio2<35){return 6;}
 
 
         return 1;

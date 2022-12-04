@@ -27,6 +27,8 @@
 [v ___fldiv __fldiv `(d  1 e 4 0 ]
 "8 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
+"15 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
 "15 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\Umul64.c
@@ -35,7 +37,7 @@
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
 "20 C:\Users\linab\OneDrive\Documents\Ecole\Imperial\Embedded C\Final project\colortest.X\card.c
 [v _readcard readcard `(uc  1 e 1 0 ]
-"53
+"54
 [v _levels levels `(v  1 e 1 0 ]
 "5 C:\Users\linab\OneDrive\Documents\Ecole\Imperial\Embedded C\Final project\colortest.X\color.c
 [v _color_click_init color_click_init `(v  1 e 1 0 ]
@@ -456,23 +458,23 @@
 [v _readcard readcard `(uc  1 e 1 0 ]
 {
 "24
-[v readcard@ratio2 ratio2 `f  1 a 4 38 ]
+[v readcard@ratio2 ratio2 `f  1 a 4 44 ]
 "23
-[v readcard@ratio1 ratio1 `f  1 a 4 34 ]
+[v readcard@ratio1 ratio1 `f  1 a 4 40 ]
 "25
-[v readcard@ratio3 ratio3 `f  1 a 4 30 ]
+[v readcard@ratio3 ratio3 `f  1 a 4 36 ]
 [s S24 RGB_val 6 `ui 1 R 2 0 `ui 1 G 2 2 `ui 1 B 2 4 ]
 "20
-[v readcard@colorL colorL `*.39S24  1 p 2 26 ]
-"51
+[v readcard@colorL colorL `*.39S24  1 p 2 32 ]
+"52
 } 0
-"53
+"54
 [v _levels levels `(v  1 e 1 0 ]
 {
 [v levels@i i `i  1 p 2 16 ]
 [s S24 RGB_val 6 `ui 1 R 2 0 `ui 1 G 2 2 `ui 1 B 2 4 ]
 [v levels@colorL colorL `*.39S24  1 p 2 18 ]
-"60
+"61
 } 0
 "29 C:\Users\linab\OneDrive\Documents\Ecole\Imperial\Embedded C\Final project\colortest.X\color.c
 [v _color_read_Red color_read_Red `(ui  1 e 2 0 ]
@@ -525,26 +527,36 @@
 {
 [v ___xxtofl@sign sign `uc  1 a 1 wreg ]
 "13
-[v ___xxtofl@arg arg `ul  1 a 4 22 ]
+[v ___xxtofl@arg arg `ul  1 a 4 28 ]
 "12
-[v ___xxtofl@exp exp `uc  1 a 1 21 ]
+[v ___xxtofl@exp exp `uc  1 a 1 27 ]
 "10
 [v ___xxtofl@sign sign `uc  1 a 1 wreg ]
-[v ___xxtofl@val val `l  1 p 4 12 ]
+[v ___xxtofl@val val `l  1 p 4 18 ]
 "15
-[v ___xxtofl@sign sign `uc  1 a 1 20 ]
+[v ___xxtofl@sign sign `uc  1 a 1 26 ]
 "44
+} 0
+"15 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 9 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 5 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 7 ]
+"53
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
 {
 "10
-[v ___lwdiv@quotient quotient `ui  1 a 2 9 ]
+[v ___lwdiv@quotient quotient `ui  1 a 2 15 ]
 "11
-[v ___lwdiv@counter counter `uc  1 a 1 11 ]
+[v ___lwdiv@counter counter `uc  1 a 1 17 ]
 "7
-[v ___lwdiv@dividend dividend `ui  1 p 2 5 ]
-[v ___lwdiv@divisor divisor `ui  1 p 2 7 ]
+[v ___lwdiv@dividend dividend `ui  1 p 2 11 ]
+[v ___lwdiv@divisor divisor `ui  1 p 2 13 ]
 "30
 } 0
 "4 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\flge.c

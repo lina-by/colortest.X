@@ -14,6 +14,7 @@
  * yellow=5
  * orange=6
  * light blue=7
+ * black = 8
  **********************************/
 
 
@@ -25,21 +26,20 @@ unsigned char readcard(struct RGB_val *colorL){
     float ratio3=colorL->B/colorL->G;
     
     //BLUE OR LIGHT BLUE
-    if ((ratio1>0.7 & ratio1<1.4) & (ratio2>0.7 & ratio2<1.4) & (ratio3>0.7 & ratio3<1.4)){
+    if ((ratio1>80 & ratio1<125) & (ratio2>80 & ratio2<125) & (ratio3>80 & ratio3<125)){
         if(colorL->B>4000){return 7;} //Light blue
         return 2; //blue
     }
     
-    if (ratio1>1.4 & ratio2>1.4){ //red, orange, pink, yellow
+    if (colorL->R>colorL->B*1.6 & colorL->R>colorL->G*1.6){ //red, orange, pink, yellow
         //test for pink
         levels(2,colorL);
-        if(colorL->B>1000){return 4;}
+        if(colorL->B>2*colorL->R){return 4;}
         // test for yellow
         levels(3,colorL);
-        if(colorL->G>5500){return 5;}
+        if(colorL->G>3.8*colorL->R){return 5;}
         // test for orange
-        levels(3,colorL);
-        if(colorL->G>2000){return 6;}
+        if(colorL->G>2*colorL->R){return 6;}
         
         //Otherwise return red
         return 1;
