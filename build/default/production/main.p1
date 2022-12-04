@@ -2087,9 +2087,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 "52
 [; ;main.c: 52:     char j;
 [v _j `uc ~T0 @X0 1 a ]
+[v F14591 `uc ~T0 @X0 -> 3 `i s ]
+[i F14591
+:U ..
 "53
-[; ;main.c: 53:     unsigned char buf[15];
-[v _buf `uc ~T0 @X0 -> 15 `i a ]
+[; ;main.c: 53:     unsigned char buf[]="0\n";
+-> 48 `c
+-> 10 `c
+-> 0 `c
+..
+]
+[v _buf `uc ~T0 @X0 -> 3 `i a ]
+[e = _buf F14591 ]
 "54
 [; ;main.c: 54:     while (1) {
 [e :U 2020 ]
@@ -2102,166 +2111,59 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _color `uc ~T0 @X0 1 a ]
 [e = _color ( _readcard (1 &U _colorL ]
 "57
-[; ;main.c: 57:         if(color==0){unsigned char buf[]="white ";}
+[; ;main.c: 57:         if(color==0){buf[0]='w';}
 [e $ ! == -> _color `i -> 0 `i 2022  ]
 {
-[v F14593 `uc ~T0 @X0 -> 7 `i s ]
-[i F14593
-:U ..
--> 119 `c
--> 104 `c
--> 105 `c
--> 116 `c
--> 101 `c
--> 32 `c
--> 0 `c
-..
-]
-[v _buf `uc ~T0 @X0 -> 7 `i a ]
-[e = _buf F14593 ]
+[e = *U + &U _buf * -> -> -> 0 `i `ui `ux -> -> # *U &U _buf `ui `ux -> -> 119 `ui `uc ]
 }
 [e :U 2022 ]
 "58
-[; ;main.c: 58:         if(color==1){unsigned char buf[]="red ";}
+[; ;main.c: 58:         if(color==1){buf[0]='r';}
 [e $ ! == -> _color `i -> 1 `i 2023  ]
 {
-[v F14595 `uc ~T0 @X0 -> 5 `i s ]
-[i F14595
-:U ..
--> 114 `c
--> 101 `c
--> 100 `c
--> 32 `c
--> 0 `c
-..
-]
-[v _buf `uc ~T0 @X0 -> 5 `i a ]
-[e = _buf F14595 ]
+[e = *U + &U _buf * -> -> -> 0 `i `ui `ux -> -> # *U &U _buf `ui `ux -> -> 114 `ui `uc ]
 }
 [e :U 2023 ]
 "59
-[; ;main.c: 59:         if(color==2){unsigned char buf[]="blue ";}
+[; ;main.c: 59:         if(color==2){buf[0]='b';}
 [e $ ! == -> _color `i -> 2 `i 2024  ]
 {
-[v F14597 `uc ~T0 @X0 -> 6 `i s ]
-[i F14597
-:U ..
--> 98 `c
--> 108 `c
--> 117 `c
--> 101 `c
--> 32 `c
--> 0 `c
-..
-]
-[v _buf `uc ~T0 @X0 -> 6 `i a ]
-[e = _buf F14597 ]
+[e = *U + &U _buf * -> -> -> 0 `i `ui `ux -> -> # *U &U _buf `ui `ux -> -> 98 `ui `uc ]
 }
 [e :U 2024 ]
 "60
-[; ;main.c: 60:         if(color==3){unsigned char buf[]="green ";}
+[; ;main.c: 60:         if(color==3){buf[0]='g';}
 [e $ ! == -> _color `i -> 3 `i 2025  ]
 {
-[v F14599 `uc ~T0 @X0 -> 7 `i s ]
-[i F14599
-:U ..
--> 103 `c
--> 114 `c
--> 101 `c
--> 101 `c
--> 110 `c
--> 32 `c
--> 0 `c
-..
-]
-[v _buf `uc ~T0 @X0 -> 7 `i a ]
-[e = _buf F14599 ]
+[e = *U + &U _buf * -> -> -> 0 `i `ui `ux -> -> # *U &U _buf `ui `ux -> -> 103 `ui `uc ]
 }
 [e :U 2025 ]
 "61
-[; ;main.c: 61:         if(color==4){unsigned char buf[]="pink ";}
+[; ;main.c: 61:         if(color==4){buf[0]='p';}
 [e $ ! == -> _color `i -> 4 `i 2026  ]
 {
-[v F14601 `uc ~T0 @X0 -> 6 `i s ]
-[i F14601
-:U ..
--> 112 `c
--> 105 `c
--> 110 `c
--> 107 `c
--> 32 `c
--> 0 `c
-..
-]
-[v _buf `uc ~T0 @X0 -> 6 `i a ]
-[e = _buf F14601 ]
+[e = *U + &U _buf * -> -> -> 0 `i `ui `ux -> -> # *U &U _buf `ui `ux -> -> 112 `ui `uc ]
 }
 [e :U 2026 ]
 "62
-[; ;main.c: 62:         if(color==5){unsigned char buf[]="yellow ";}
+[; ;main.c: 62:         if(color==5){buf[0]='y';}
 [e $ ! == -> _color `i -> 5 `i 2027  ]
 {
-[v F14603 `uc ~T0 @X0 -> 8 `i s ]
-[i F14603
-:U ..
--> 121 `c
--> 101 `c
--> 108 `c
--> 108 `c
--> 111 `c
--> 119 `c
--> 32 `c
--> 0 `c
-..
-]
-[v _buf `uc ~T0 @X0 -> 8 `i a ]
-[e = _buf F14603 ]
+[e = *U + &U _buf * -> -> -> 0 `i `ui `ux -> -> # *U &U _buf `ui `ux -> -> 121 `ui `uc ]
 }
 [e :U 2027 ]
 "63
-[; ;main.c: 63:         if(color==6){unsigned char buf[]="orange ";}
+[; ;main.c: 63:         if(color==6){buf[0]='o';}
 [e $ ! == -> _color `i -> 6 `i 2028  ]
 {
-[v F14605 `uc ~T0 @X0 -> 8 `i s ]
-[i F14605
-:U ..
--> 111 `c
--> 114 `c
--> 97 `c
--> 110 `c
--> 103 `c
--> 101 `c
--> 32 `c
--> 0 `c
-..
-]
-[v _buf `uc ~T0 @X0 -> 8 `i a ]
-[e = _buf F14605 ]
+[e = *U + &U _buf * -> -> -> 0 `i `ui `ux -> -> # *U &U _buf `ui `ux -> -> 111 `ui `uc ]
 }
 [e :U 2028 ]
 "64
-[; ;main.c: 64:         if(color==7){unsigned char buf[]="light blue ";}
+[; ;main.c: 64:         if(color==7){buf[0]='l';}
 [e $ ! == -> _color `i -> 7 `i 2029  ]
 {
-[v F14607 `uc ~T0 @X0 -> 12 `i s ]
-[i F14607
-:U ..
--> 108 `c
--> 105 `c
--> 103 `c
--> 104 `c
--> 116 `c
--> 32 `c
--> 98 `c
--> 108 `c
--> 117 `c
--> 101 `c
--> 32 `c
--> 0 `c
-..
-]
-[v _buf `uc ~T0 @X0 -> 12 `i a ]
-[e = _buf F14607 ]
+[e = *U + &U _buf * -> -> -> 0 `i `ui `ux -> -> # *U &U _buf `ui `ux -> -> 108 `ui `uc ]
 }
 [e :U 2029 ]
 "65

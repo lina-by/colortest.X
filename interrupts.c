@@ -30,7 +30,9 @@ void __interrupt(high_priority) HighISR()
             PIE4bits.TX4IE=0;
             sendFLAG=0;
         } //when there's no more data to send, disable the interrupt
-        TX4REG = getCharFromTxBuf();//fill and therefore and clear the interrupt flag
+        if (isDataInTxBuf()){
+            TX4REG = getCharFromTxBuf();
+        }//fill and therefore and clear the interrupt flag
         
 	}
     //Read characters

@@ -30,7 +30,7 @@ unsigned char readcard(struct RGB_val *colorL){
         return 2; //blue
     }
     
-    if (ratio1>1.6 & ratio2>1.6){ //red, orange, pink, yellow
+    if (ratio1>1.4 & ratio2>1.4){ //red, orange, pink, yellow
         //test for pink
         levels(2,colorL);
         if(colorL->B>1000){return 4;}

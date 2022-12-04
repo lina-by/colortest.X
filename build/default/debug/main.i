@@ -24541,18 +24541,18 @@ void main(void){
     LightInit();
 
     char j;
-    unsigned char buf[]="0\n";
+    unsigned char buf[15];
     while (1) {
     Light(0);
         unsigned char color = readcard(&colorL);
-        if(color==0){buf[0]='w';}
-        if(color==1){buf[0]='r';}
-        if(color==2){buf[0]='b';}
-        if(color==3){buf[0]='g';}
-        if(color==4){buf[0]='p';}
-        if(color==5){buf[0]='y';}
-        if(color==6){buf[0]='o';}
-        if(color==7){buf[0]='l';}
+        if(color==0){unsigned char buf[]="white ";}
+        if(color==1){unsigned char buf[]="red ";}
+        if(color==2){unsigned char buf[]="blue ";}
+        if(color==3){unsigned char buf[]="green ";}
+        if(color==4){unsigned char buf[]="pink ";}
+        if(color==5){unsigned char buf[]="yellow ";}
+        if(color==6){unsigned char buf[]="orange ";}
+        if(color==7){unsigned char buf[]="light blue ";}
         TxBufferedString(&buf);
         Light(0);
         for (j=0;j<3;j++){_delay((unsigned long)((900)*(64000000/4000.0)));}
